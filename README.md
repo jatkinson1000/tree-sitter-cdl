@@ -55,6 +55,12 @@ issue tracker, pull requests, and social media activity, is expected to treat ot
 people with respect and, more generally, to follow the guidelines articulated in the
 [Python Community Code of Conduct](https://www.python.org/psf/codeofconduct/).
 
+### Developer guidelines
+
+Code quality is enforced through a linting workflow that checks the `grammar.js` file
+using [eslint](https://github.com/eslint/eslint) and GitHub workflows using
+[zizmor](https://github.com/zizmorcore/zizmor).
+
 
 ## Authors and Acknowledgment
 

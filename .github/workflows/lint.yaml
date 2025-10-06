@@ -1,0 +1,61 @@
+name: Lint
+
+on:
+
+  # Triggers the workflow on pushes to the "main" branch, i.e., PR merges
+  push:
+    branches: [ "main" ]
+
+  # Triggers the workflow on pushes to open pull requests with code changes
+  pull_request:
+    paths:
+      - grammar.js
+      - '.github/workflows/*.yaml'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          cache: npm
+          node-version: ${{vars.NODE_VERSION}}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          cd ${{ github.workspace }}
+          npm ci --legacy-peer-deps
+          python -m pip install --upgrade pip
+          python -m venv ../ts_cdl_venv
+          source ../ts_cdl_venv/bin/activate
+          pip install zizmor==0.9.2
+
+      # Apply javascript linter ESLint
+      - name: Run ESLint
+        if: always()
+        run: |
+          cd ${{ github.workspace }}
+          npm run lint
+
+      # Apply GitHub Actions linter zizmor
+      - name: zizmor
+        if: always()
+        run: |
+          cd ${{ github.workspace }}
+          source ../ts_cdl_venv/bin/activate
+          zizmor .github/workflows/*.yaml
