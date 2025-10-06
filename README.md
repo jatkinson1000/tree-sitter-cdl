@@ -20,7 +20,7 @@ and uses the CDL syntax
 
 A rough outline is as follows:
 
-- [ ] Run tree-sitter-init and generate base repository
+- [x] Run tree-sitter-init and generate base repository
 - [ ] Start writing basic rules into the grammar file
 - [ ] Implement syntax highlighting for TextMate and use
 
