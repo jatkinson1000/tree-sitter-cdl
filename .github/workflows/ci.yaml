@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+
+  pull_request:
+    paths:
+      - grammar.js
+      - src/**
+      - test/**
+      - bindings/**
+      - binding.gyp
+
+  workflow_dispatch:
+
+concurrency:
+  group: ${{github.workflow}}-${{github.ref}}
+  cancel-in-progress: true
+
+permissions: {}
+
+jobs:
+  test:
+    name: Test parser
+    runs-on: ${{matrix.os}}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-14]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - name: Set up tree-sitter
+        uses: tree-sitter/setup-action/cli@c4c258862a6a7e43a7aef152256bbf659972c408  # v2
+
+      - name: Run tests
+        uses: tree-sitter/parser-test-action@aba4a3de737f86f8ce83be38166a1ab521d4c960  # v3
+        # with:
+        #   test-rust: true
+        #   test-node: true
+        #   test-python: true
+        #   test-go: true
+        #   test-swift: true
