@@ -18,6 +18,11 @@ It follows the tree-sitter guidance for
 and uses the CDL syntax
 [outlined in the NetCDF User Guide](https://docs.unidata.ucar.edu/nug/2.0-draft/cdl.html).
 
+Of particular use are the YAAC parser file
+[`ncgen.y`](https://github.com/Unidata/netcdf-c/blob/main/ncgen/ncgen.l)
+and the corresponding lexer file
+[`ncgen.l`](https://github.com/Unidata/netcdf-c/blob/main/ncgen/ncgen.l) from `netcdf-c`.
+
 A rough outline is as follows:
 
 - [x] Run tree-sitter-init and generate base repository
