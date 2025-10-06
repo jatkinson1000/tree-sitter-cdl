@@ -1,0 +1,175 @@
+=====================================================
+Basic empty file with valid characters in identifier
+=====================================================
+
+netcdf abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ_.+-@ {
+}
+
+---
+
+(dataset
+  (identifier))
+
+=====================================================
+Basic empty file with identifier starting upper-case
+=====================================================
+
+netcdf A_ok {
+}
+
+---
+
+(dataset
+  (identifier))
+
+=====================================================
+Basic empty file with identifier starting underscore
+=====================================================
+
+netcdf _Ok {
+}
+
+---
+
+(dataset
+  (identifier))
+
+
+==================================================
+Basic empty file with invalid space in identifier
+:error
+==================================================
+
+netcdf Not OK {
+}
+
+---
+==================================================
+Basic empty file with invalid start to identifier
+:error
+==================================================
+
+netcdf =Not_OK {
+}
+
+---
+
+====================================================
+Basic empty file with invalid ( start to identifier
+:error
+====================================================
+
+netcdf (_Not_OK {
+}
+
+---
+
+====================================================
+Basic empty file with invalid [ start to identifier
+:error
+====================================================
+
+netcdf [_Not_OK {
+}
+
+---
+
+====================================================
+Basic empty file with invalid . start to identifier
+:error
+====================================================
+
+netcdf ._Not_OK {
+}
+
+---
+
+====================================================
+Basic empty file with invalid ! start to identifier
+:error
+====================================================
+
+netcdf !Not_OK {
+}
+
+---
+
+====================================================
+Basic empty file with invalid % start to identifier
+:error
+====================================================
+
+netcdf %Not_OK {
+}
+
+---
+
+====================================================
+Basic empty file with invalid * start to identifier
+:error
+====================================================
+
+netcdf *Not_OK {
+}
+
+---
+
+====================================================
+Basic empty file with invalid < start to identifier
+:error
+====================================================
+
+netcdf <_Not_OK {
+}
+
+---
+
+====================================================
+Basic empty file with invalid > start to identifier
+:error
+====================================================
+
+netcdf >_Not_OK {
+}
+
+---
+
+====================================================
+Basic empty file with invalid / start to identifier
+:error
+====================================================
+
+netcdf /_Not_OK {
+}
+
+---
+
+====================================================
+Basic empty file with invalid \ start to identifier
+:error
+====================================================
+
+netcdf \_Not_OK {
+}
+
+---
+
+====================================================
+Basic empty file with invalid ; start to identifier
+:error
+====================================================
+
+netcdf ;_Not_OK {
+}
+
+---
+
+====================================================
+Basic empty file with invalid : start to identifier
+:error
+====================================================
+
+netcdf :_Not_OK {
+}
+
+---

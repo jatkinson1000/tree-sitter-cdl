@@ -11,7 +11,17 @@ module.exports = grammar({
   name: 'cdl',
 
   rules: {
-    // TODO: add the actual grammar rules
-    source_file: $ => 'hello',
+    dataset: $ => seq(
+      'netcdf',
+      $.identifier,
+      '{',
+      '}',
+    ),
+
+    // Tokens
+    // Names must start with a-zA-Z_ be non-zero length and contain a-zA-Z0-9_.+-@
+    identifier: $ => /[a-zA-Z_][a-zA-Z0-9_.+\-@]*/,
+
   },
+
 });

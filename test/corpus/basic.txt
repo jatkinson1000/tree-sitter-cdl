@@ -1,0 +1,11 @@
+=========================
+Most basic empty dataset
+=========================
+
+netcdf basic {
+}
+
+---
+
+(dataset
+  (identifier))
