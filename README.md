@@ -26,7 +26,13 @@ and the corresponding lexer file
 A rough outline is as follows:
 
 - [x] Run tree-sitter-init and generate base repository
-- [ ] Start writing basic rules into the grammar file
+- [ ] Implement rules in the grammar file
+    - [x] Basic syntax (names, comments, whitespace)
+    - [x] Dimensions
+    - [ ] Variables
+    - [ ] Data
+    - [ ] Types
+    - [ ] ...
 - [ ] Implement syntax highlighting for TextMate and use
 
 
