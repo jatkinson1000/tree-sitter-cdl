@@ -173,3 +173,30 @@ netcdf :_Not_OK {
 }
 
 ---
+
+====================
+Single-line comment
+====================
+
+netcdf dataset_name {
+// This is a single-line comment
+}
+
+---
+
+(dataset
+  (identifier)
+  (comment))
+
+===============
+Inline comment
+===============
+
+netcdf dataset_name {  // This is an inline comment
+}
+
+---
+
+(dataset
+  (identifier)
+  (comment))
