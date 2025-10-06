@@ -1,0 +1,204 @@
+==============================
+Dataset with empty dimensions
+==============================
+
+netcdf basic {
+    dimensions:
+}
+
+---
+
+(dataset
+  (identifier)
+  (dimensions_section))
+
+============================================
+Dataset with invalid dimensions declaration
+:error
+============================================
+
+netcdf basic {
+    dimensions :
+}
+
+---
+
+============================================
+Dataset with invalid dimensions declaration
+:error
+============================================
+
+netcdf basic {
+    dimensions ;
+}
+
+---
+
+============================================
+Dataset with invalid dimensions declaration
+:error
+============================================
+
+netcdf basic {
+    dimensions: ;
+}
+
+---
+
+============================================
+Dataset with invalid dimensions declaration
+:error
+============================================
+
+netcdf basic {
+    dimensions
+}
+
+---
+
+==============================
+Dataset with single dimension
+==============================
+
+netcdf basic {
+    dimensions:
+        a = 1 ;
+}
+
+---
+
+(dataset
+  (identifier)
+  (dimensions_section
+    (dimension
+      (identifier))))
+
+========================================
+Dataset with single unlimited dimension
+========================================
+
+netcdf basic {
+    dimensions:
+        time = unlimited ;
+}
+
+---
+
+(dataset
+  (identifier)
+  (dimensions_section
+    (dimension
+      (identifier))))
+
+========================================
+Dataset with single UNLIMITED dimension
+========================================
+
+netcdf basic {
+    dimensions:
+        time = UNLIMITED ;
+}
+
+---
+
+(dataset
+  (identifier)
+  (dimensions_section
+    (dimension
+      (identifier))))
+
+=================================================================
+Dataset with single dimension and invalid dimensions declaration
+:error
+=================================================================
+
+netcdf basic {
+    dimensions :
+        a = 1;
+}
+
+---
+
+=================================================================
+Dataset with single dimension and invalid dimensions declaration
+:error
+=================================================================
+
+netcdf basic {
+    dimensions;
+        a = 1;
+}
+
+---
+
+=================================
+Dataset with multiple dimensions
+=================================
+
+netcdf basic {
+    dimensions:
+        a = 1 ;
+        b = 2 ;
+        c = unlimited ;
+}
+
+---
+
+(dataset
+  (identifier)
+  (dimensions_section
+    (dimension
+      (identifier))
+    (dimension
+      (identifier))
+    (dimension
+      (identifier))))
+
+
+=====================================
+Dataset with invalid float dimension
+:error
+=====================================
+
+netcdf basic {
+    dimensions:
+        a = 1.0 ;
+}
+
+---
+
+====================================
+Dataset with invalid char dimension
+:error
+====================================
+
+netcdf basic {
+    dimensions:
+        a = two ;
+}
+
+---
+
+=================================
+Dataset with invalid * dimension
+:error
+=================================
+
+netcdf basic {
+    dimensions:
+        a = * ;
+}
+
+---
+
+====================================
+Dataset with invalid dimension name
+:error
+====================================
+
+netcdf basic {
+    dimensions:
+        .no = * ;
+}
+
+---

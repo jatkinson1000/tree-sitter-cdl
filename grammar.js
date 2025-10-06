@@ -7,6 +7,9 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
+// Constants
+const decimalDigits = /\d+/;
+
 module.exports = grammar({
   name: 'cdl',
 
@@ -22,7 +25,20 @@ module.exports = grammar({
       'netcdf',
       $.identifier,
       '{',
+      optional($.dimensions_section),
       '}',
+    ),
+
+    // Dimensions
+    dimensions_section: $ => seq(
+      'dimensions:',
+      repeat(seq($.dimension, ';')),
+    ),
+
+    dimension: $ => seq(
+      $.identifier,
+      '=',
+      choice(decimalDigits, /unlimited|UNLIMITED/),
     ),
 
     // Names must start with a-zA-Z_ be non-zero length and contain a-zA-Z0-9_.+-@
