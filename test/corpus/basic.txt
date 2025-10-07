@@ -8,4 +8,4 @@ netcdf basic {
 ---
 
 (dataset
-  (identifier))
+  (dataset_id))

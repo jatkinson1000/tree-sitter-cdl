@@ -9,7 +9,7 @@ netcdf basic {
 ---
 
 (dataset
-  (identifier)
+  (dataset_id)
   (dimensions_section))
 
 ============================================
@@ -68,7 +68,7 @@ netcdf basic {
 ---
 
 (dataset
-  (identifier)
+  (dataset_id)
   (dimensions_section
     (dimension
       (identifier))))
@@ -85,7 +85,7 @@ netcdf basic {
 ---
 
 (dataset
-  (identifier)
+  (dataset_id)
   (dimensions_section
     (dimension
       (identifier))))
@@ -102,7 +102,7 @@ netcdf basic {
 ---
 
 (dataset
-  (identifier)
+  (dataset_id)
   (dimensions_section
     (dimension
       (identifier))))
@@ -145,7 +145,7 @@ netcdf basic {
 ---
 
 (dataset
-  (identifier)
+  (dataset_id)
   (dimensions_section
     (dimension
       (identifier))

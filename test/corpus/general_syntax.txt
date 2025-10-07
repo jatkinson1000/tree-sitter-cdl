@@ -1,18 +1,30 @@
-=====================================================
-Basic empty file with valid characters in identifier
-=====================================================
+============================
+Dataset ID Valid characters
+============================
 
-netcdf abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ_.+-@ {
+netcdf abcxyz_ABCXYZ_.+-@ {
 }
 
 ---
 
 (dataset
-  (identifier))
+  (dataset_id))
 
-=====================================================
-Basic empty file with identifier starting upper-case
-=====================================================
+=================================
+Dataset ID Valid containing UTF8
+=================================
+
+netcdf utf8_äöü {
+}
+
+---
+
+(dataset
+  (dataset_id))
+
+=====================================
+Dataset ID Valid starting upper-case
+=====================================
 
 netcdf A_ok {
 }
@@ -20,11 +32,11 @@ netcdf A_ok {
 ---
 
 (dataset
-  (identifier))
+  (dataset_id))
 
-=====================================================
-Basic empty file with identifier starting underscore
-=====================================================
+=====================================
+Dataset ID Valid starting underscore
+=====================================
 
 netcdf _Ok {
 }
@@ -32,144 +44,62 @@ netcdf _Ok {
 ---
 
 (dataset
-  (identifier))
+  (dataset_id))
 
+============================
+Dataset ID Valid with space
+============================
 
-==================================================
-Basic empty file with invalid space in identifier
-:error
-==================================================
-
-netcdf Not OK {
-}
-
----
-==================================================
-Basic empty file with invalid start to identifier
-:error
-==================================================
-
-netcdf =Not_OK {
+netcdf Spaces are OK {
 }
 
 ---
 
-====================================================
-Basic empty file with invalid ( start to identifier
-:error
-====================================================
+(dataset
+  (dataset_id))
 
-netcdf (_Not_OK {
+====================================
+Dataset ID Valid starting with UTF8
+====================================
+
+netcdf äöü-utf8 {
 }
 
 ---
 
-====================================================
-Basic empty file with invalid [ start to identifier
-:error
-====================================================
+(dataset
+  (dataset_id))
 
-netcdf [_Not_OK {
+==========================================
+Dataset ID Valid with non-regular = start
+==========================================
+
+netcdf =OK {
 }
 
 ---
 
-====================================================
-Basic empty file with invalid . start to identifier
-:error
-====================================================
+(dataset
+  (dataset_id))
 
-netcdf ._Not_OK {
+==========================================
+Dataset ID Valid with non-regular [ start
+==========================================
+
+netcdf [_Also_OK {
 }
 
 ---
 
-====================================================
-Basic empty file with invalid ! start to identifier
+(dataset
+  (dataset_id))
+
+==============================
+Dataset ID Invalid contains {
 :error
-====================================================
+==============================
 
-netcdf !Not_OK {
-}
-
----
-
-====================================================
-Basic empty file with invalid % start to identifier
-:error
-====================================================
-
-netcdf %Not_OK {
-}
-
----
-
-====================================================
-Basic empty file with invalid * start to identifier
-:error
-====================================================
-
-netcdf *Not_OK {
-}
-
----
-
-====================================================
-Basic empty file with invalid < start to identifier
-:error
-====================================================
-
-netcdf <_Not_OK {
-}
-
----
-
-====================================================
-Basic empty file with invalid > start to identifier
-:error
-====================================================
-
-netcdf >_Not_OK {
-}
-
----
-
-====================================================
-Basic empty file with invalid / start to identifier
-:error
-====================================================
-
-netcdf /_Not_OK {
-}
-
----
-
-====================================================
-Basic empty file with invalid \ start to identifier
-:error
-====================================================
-
-netcdf \_Not_OK {
-}
-
----
-
-====================================================
-Basic empty file with invalid ; start to identifier
-:error
-====================================================
-
-netcdf ;_Not_OK {
-}
-
----
-
-====================================================
-Basic empty file with invalid : start to identifier
-:error
-====================================================
-
-netcdf :_Not_OK {
+netcdf ID_with_{_Not_OK {
 }
 
 ---
@@ -185,7 +115,7 @@ netcdf dataset_name {
 ---
 
 (dataset
-  (identifier)
+  (dataset_id)
   (comment))
 
 ===============
@@ -198,5 +128,197 @@ netcdf dataset_name {  // This is an inline comment
 ---
 
 (dataset
-  (identifier)
+  (dataset_id)
   (comment))
+
+============================
+Identifier Valid characters
+============================
+
+netcdf dataset {
+dimensions:
+    abcxyz_ABCXYZ_.+-@ = 4 ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (dimensions_section
+    (dimension
+      (identifier))))
+
+===========================
+Identifier Valid with UTF8
+===========================
+
+netcdf dataset {
+dimensions:
+    utf8_äöü = 4 ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (dimensions_section
+    (dimension
+      (identifier))))
+
+==============================================
+Identifier Valid starting with escaped number
+==============================================
+
+netcdf dataset {
+dimensions:
+    \9a = 4 ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (dimensions_section
+    (dimension
+      (identifier))))
+
+==================================================
+Identifier Invalid starting with unescaped number
+:error
+==================================================
+
+netcdf dataset {
+dimensions:
+    99 = 4 ;
+}
+
+---
+
+=====================================
+Identifier Valid starting upper-case
+=====================================
+
+netcdf dataset {
+dimensions:
+    A_ok = 4 ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (dimensions_section
+    (dimension
+      (identifier))))
+
+=====================================
+Identifier Valid starting underscore
+=====================================
+
+netcdf dataset {
+dimensions:
+    _Ok = 4 ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (dimensions_section
+    (dimension
+      (identifier))))
+
+====================================
+Identifier Invalid containing space
+:error
+====================================
+
+netcdf dataset {
+dimensions:
+    Spaces are\ Not OK = 4 ;
+}
+
+---
+
+================================
+Identifier Invalid containing /
+:error
+================================
+
+netcdf dataset {
+dimensions:
+    Reserve_/_for_Filenames = 4 ;
+}
+
+---
+
+====================================
+Identifier Valid starting with UTF8
+====================================
+
+netcdf dataset {
+dimensions:
+    äaa = 4 ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (dimensions_section
+    (dimension
+      (identifier))))
+
+================================
+Identifier Invalid containing =
+:error
+================================
+
+netcdf dataset {
+dimensions:
+    Not=OK = 4 ;
+}
+
+---
+
+==================================================
+Identifier Invalid containing unescaped special [
+:error
+==================================================
+
+netcdf dataset {
+dimensions:
+    Contains_[_OK = 4 ;
+}
+
+---
+
+
+==============================================
+Identifier Valid containing escaped special [
+==============================================
+
+netcdf dataset {
+dimensions:
+    Contains_\[_OK = 4 ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (dimensions_section
+    (dimension
+      (identifier))))
+
+====================================
+Identifier starting with escaped special [
+:error
+====================================
+
+netcdf dataset {
+dimensions:
+    \[_Not_OK = 4 ;
+}
+
+---
