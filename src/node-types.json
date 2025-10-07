@@ -9,11 +9,11 @@
       "required": true,
       "types": [
         {
-          "type": "dimensions_section",
+          "type": "dataset_id",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "dimensions_section",
           "named": true
         }
       ]
@@ -61,6 +61,10 @@
     "type": "comment",
     "named": true,
     "extra": true
+  },
+  {
+    "type": "dataset_id",
+    "named": true
   },
   {
     "type": "dimensions:",

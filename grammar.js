@@ -9,6 +9,13 @@
 
 // Constants
 const decimalDigits = /\d+/;
+const letterOrUnderscore = /[a-zA-Z_]/;
+const ncSpecialChars = /[a-zA-Z0-9_.@+-]/; // Original set - do not need to be escaped
+const ncUnlimited = /unlimited|UNLIMITED/;
+const utf8Chars = /[\u0080-\uFFFF]/;
+
+const escapedDigits = seq('\\', /\d+/);
+const escapedChars = seq('\\', /[ !"#$%&'()*,:;<=>?\[\\\]^`{|}~]/);
 
 module.exports = grammar({
   name: 'cdl',
@@ -23,7 +30,7 @@ module.exports = grammar({
   rules: {
     dataset: $ => seq(
       'netcdf',
-      $.identifier,
+      $.dataset_id,
       '{',
       optional($.dimensions_section),
       '}',
@@ -38,11 +45,36 @@ module.exports = grammar({
     dimension: $ => seq(
       $.identifier,
       '=',
-      choice(decimalDigits, /unlimited|UNLIMITED/),
+      choice(decimalDigits, ncUnlimited),
     ),
 
-    // Names must start with a-zA-Z_ be non-zero length and contain a-zA-Z0-9_.+-@
-    identifier: $ => /[a-zA-Z_][a-zA-Z0-9_.+\-@]*/,
+    // Dataset ID can be any character except '{'
+    // Note also that the CDL dataset ID is irrelevant as generated file is named based
+    // on filename, not dataset ID. Ideally they should match as occurs with ncdump.
+    dataset_id: $ => token(/[^{][^{]*/),
+
+    // Old spec: Identifiers start with a-zA-Z_ be non-zero length and contain a-zA-Z0-9_.+-@
+    identifier_old: $ => token(/[a-zA-Z_][a-zA-Z0-9_.+\-@]*/),
+
+    // Current spec: Identifiers
+    identifier: $ => token(
+      seq(
+        // Starts with a letter or underscore, escaped digit, or UTF-8 character (allowed set)
+        choice(
+          letterOrUnderscore,
+          escapedDigits,
+          utf8Chars,
+        ),
+        // Then contains any unescaped ncSpecialChars, UTF-8, or escaped special characters
+        repeat(
+          choice(
+            ncSpecialChars,
+            escapedChars,
+            utf8Chars,
+          ),
+        ),
+      ),
+    ),
 
     // Comments exist anywhere on one line preceded by //
     comment: $ => token(seq('//', /.*/)),
