@@ -71,7 +71,7 @@ netcdf basic {
   (dataset_id)
   (dimensions_section
     (dimension
-      (identifier))))
+      name: (identifier))))
 
 ========================================
 Dataset with single unlimited dimension
@@ -88,7 +88,7 @@ netcdf basic {
   (dataset_id)
   (dimensions_section
     (dimension
-      (identifier))))
+      name: (identifier))))
 
 ========================================
 Dataset with single UNLIMITED dimension
@@ -105,7 +105,7 @@ netcdf basic {
   (dataset_id)
   (dimensions_section
     (dimension
-      (identifier))))
+      name: (identifier))))
 
 =================================================================
 Dataset with single dimension and invalid dimensions declaration
@@ -148,12 +148,35 @@ netcdf basic {
   (dataset_id)
   (dimensions_section
     (dimension
-      (identifier))
+      name: (identifier))
     (dimension
-      (identifier))
+      name: (identifier))
     (dimension
-      (identifier))))
+      name: (identifier))))
 
+========================================
+Dataset with invalid negative dimension
+:error
+========================================
+
+netcdf basic {
+    dimensions:
+        a = -1 ;
+}
+
+---
+
+======================================
+Dataset with missing dimension number
+:error
+======================================
+
+netcdf basic {
+    dimensions:
+        a = ;
+}
+
+---
 
 =====================================
 Dataset with invalid float dimension

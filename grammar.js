@@ -43,9 +43,9 @@ module.exports = grammar({
     ),
 
     dimension: $ => seq(
-      $.identifier,
+      field('name', $.identifier),
       '=',
-      choice(decimalDigits, ncUnlimited),
+      field('size', choice(decimalDigits, ncUnlimited)),
     ),
 
     // Dataset ID can be any character except '{'
