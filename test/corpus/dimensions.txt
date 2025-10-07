@@ -154,6 +154,61 @@ netcdf basic {
     (dimension
       name: (identifier))))
 
+=========================================
+Dataset with multiple dimensions as list
+=========================================
+
+netcdf basic {
+    dimensions:
+        a = 1, b = 2, c = unlimited ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (dimensions_section
+    (dimension
+      name: (identifier))
+    (dimension
+      name: (identifier))
+    (dimension
+      name: (identifier))))
+
+===================================================
+Dataset with invalid dimensions list missing comma
+:error
+===================================================
+
+netcdf basic {
+    dimensions:
+        a = 1, b = 2 c = unlimited ;
+}
+
+---
+
+=====================================================
+Dataset with multiple dimensions list and individual
+=====================================================
+
+netcdf basic {
+    dimensions:
+        a = 1, b = 2 ;
+        c = unlimited ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (dimensions_section
+    (dimension
+      name: (identifier))
+    (dimension
+      name: (identifier))
+    (dimension
+      name: (identifier))))
+
 ========================================
 Dataset with invalid negative dimension
 :error

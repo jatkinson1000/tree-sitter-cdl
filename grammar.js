@@ -37,9 +37,16 @@ module.exports = grammar({
     ),
 
     // Dimensions
+    // Can be a comma-separated list
     dimensions_section: $ => seq(
       'dimensions:',
-      repeat(seq($.dimension, ';')),
+      repeat(
+        seq(
+          $.dimension,
+          repeat(seq(',', $.dimension)),
+          ';',
+        ),
+      ),
     ),
 
     dimension: $ => seq(

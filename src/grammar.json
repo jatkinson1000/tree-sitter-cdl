@@ -52,6 +52,22 @@
                 "name": "dimension"
               },
               {
+                "type": "REPEAT",
+                "content": {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": ","
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "dimension"
+                    }
+                  ]
+                }
+              },
+              {
                 "type": "STRING",
                 "value": ";"
               }
