@@ -1,0 +1,284 @@
+=============================
+Dataset with empty variables
+=============================
+
+netcdf basic {
+    variables:
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section))
+
+===========================================
+Dataset with invalid variables declaration
+:error
+===========================================
+
+netcdf basic {
+    variabls :
+}
+
+---
+
+===========================================
+Dataset with invalid variables declaration
+:error
+===========================================
+
+netcdf basic {
+    variables ;
+}
+
+---
+
+===========================================
+Dataset with invalid variables declaration
+:error
+===========================================
+
+netcdf basic {
+    variables: ;
+}
+
+---
+
+===========================================
+Dataset with invalid variables declaration
+:error
+===========================================
+
+netcdf basic {
+    variables
+}
+
+---
+
+============================================
+Dataset with single variable, no dimensions
+============================================
+
+netcdf basic {
+    variables:
+        float a ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      (variable
+        name: (identifier)))))
+
+============================================
+Dataset with single variable, one dimension
+============================================
+
+netcdf basic {
+    variables:
+        float a(b) ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      (variable
+        name: (identifier)
+        dimensions: (dimension_spec
+          (identifier))))))
+
+==================================================
+Dataset with single variable, multiple dimensions
+==================================================
+
+netcdf basic {
+    variables:
+        float rh(lat, lon) ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      (variable
+        name: (identifier)
+        dimensions: (dimension_spec
+          (identifier)
+          (identifier))))))
+
+===================================
+Dataset with invalid variable type
+:error
+===================================
+
+netcdf basic {
+    variables:
+        asdf a;
+}
+
+---
+
+===================================
+Dataset with invalid variable name
+:error
+===================================
+
+netcdf basic {
+    variables:
+        float =No;
+}
+
+---
+
+================================================================
+Dataset with single variable and invalid variables declaration
+:error
+================================================================
+
+netcdf basic {
+    variables :
+        float a;
+}
+
+---
+
+===============================================================
+Dataset with single variable and invalid variables declaration
+:error
+===============================================================
+
+netcdf basic {
+    dimensions;
+        float a;
+}
+
+---
+
+===================================
+Dataset with missing variable type
+:error
+===================================
+
+netcdf basic {
+    dimensions;
+        a(lat, lon) ;
+}
+
+---
+
+==============================
+Dataset with missing variable
+:error
+==============================
+
+netcdf basic {
+    dimensions;
+        int ;
+}
+
+---
+
+=========================================
+Dataset with multiple variables as list
+=========================================
+
+netcdf basic {
+    variables:
+        float a, b(lat, lon), c(time,lat,lon) ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+    (variables_section
+      (variable_declarations
+        (variable
+          name: (identifier))
+        (variable
+          name: (identifier)
+          dimensions: (dimension_spec
+            (identifier)
+            (identifier)))
+        (variable
+          name: (identifier)
+          dimensions: (dimension_spec
+            (identifier)
+            (identifier)
+            (identifier))))))
+
+===================================================
+Dataset with invalid variable list missing comma
+:error
+===================================================
+
+netcdf basic {
+    variables:
+        float a, b(lat, lon) c(time,lat,lon) ;
+}
+
+---
+
+=====================================================
+Dataset with multiple dimensions list and individual
+=====================================================
+
+netcdf basic {
+    variables:
+        float a, b(lat, lon);
+        int c(time,lat,lon) ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      (variable
+        (identifier))
+      (variable
+        (identifier)
+        (dimension_spec
+          (identifier)
+          (identifier))))
+    (variable_declarations
+      (variable
+        (identifier)
+        (dimension_spec
+          (identifier)
+          (identifier)
+          (identifier))))))
+
+=============================================
+Dataset with variable with missing dimension
+:error
+=============================================
+
+netcdf basic {
+    variables:
+        float a, b(lat, );
+}
+
+---
+
+=====================================================
+Dataset with variable with invalid numeric dimension
+:error
+=====================================================
+
+netcdf basic {
+    variables:
+        float a, b(5, 10);
+}
+
+---

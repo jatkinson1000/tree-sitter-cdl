@@ -16,6 +16,10 @@ const utf8Chars = /[\u0080-\uFFFF]/;
 
 const escapedDigits = seq('\\', /\d+/);
 const escapedChars = seq('\\', /[ !"#$%&'()*,:;<=>?\[\\\]^`{|}~]/);
+const type = choice(
+  'byte', 'char', 'short', 'int', 'float', 'double', 'ubyte', 'ushort', 'uint', 'int64', 'uint64', 'string',
+);
+
 
 module.exports = grammar({
   name: 'cdl',
@@ -33,6 +37,7 @@ module.exports = grammar({
       $.dataset_id,
       '{',
       optional($.dimensions_section),
+      optional($.variables_section),
       '}',
     ),
 
@@ -53,6 +58,32 @@ module.exports = grammar({
       field('name', $.identifier),
       '=',
       field('size', choice(decimalDigits, ncUnlimited)),
+    ),
+
+    // Variables
+    // Can be a comma-separated list
+    variables_section: $ => seq(
+      'variables:',
+      repeat($.variable_declarations),
+    ),
+
+    variable_declarations: $ => seq(
+      field('type', type),
+      $.variable,
+      repeat(seq(',', $.variable)),
+      ';',
+    ),
+
+    variable: $ => seq(
+      field('name', $.identifier),
+      optional(field('dimensions', $.dimension_spec)),
+    ),
+
+    dimension_spec: $ => seq(
+      '(',
+      $.identifier,
+      repeat(seq(',', $.identifier)),
+      ')',
     ),
 
     // Dataset ID can be any character except '{'
