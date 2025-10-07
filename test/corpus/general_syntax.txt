@@ -311,14 +311,38 @@ dimensions:
     (dimension
       (identifier))))
 
-====================================
-Identifier starting with escaped special [
+===================================================
+Identifier Invalid starting with escaped special [
 :error
-====================================
+===================================================
 
 netcdf dataset {
 dimensions:
     \[_Not_OK = 4 ;
+}
+
+---
+
+===============================
+Identifier Invalid Zero Length
+:error
+===============================
+
+netcdf dataset {
+dimensions:
+= 4 ;
+}
+
+---
+
+=========================================
+Identifier Invalid Zero Length formatted
+:error
+=========================================
+
+netcdf dataset {
+dimensions:
+    = 4 ;
 }
 
 ---
