@@ -36,6 +36,21 @@
     }
   },
   {
+    "type": "dimension_declarations",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "dimension",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "dimensions_section",
     "named": true,
     "fields": {},
@@ -44,7 +59,7 @@
       "required": false,
       "types": [
         {
-          "type": "dimension",
+          "type": "dimension_declarations",
           "named": true
         }
       ]

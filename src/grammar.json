@@ -45,34 +45,38 @@
         {
           "type": "REPEAT",
           "content": {
+            "type": "SYMBOL",
+            "name": "dimension_declarations"
+          }
+        }
+      ]
+    },
+    "dimension_declarations": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "dimension"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
             "type": "SEQ",
             "members": [
               {
+                "type": "STRING",
+                "value": ","
+              },
+              {
                 "type": "SYMBOL",
                 "name": "dimension"
-              },
-              {
-                "type": "REPEAT",
-                "content": {
-                  "type": "SEQ",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": ","
-                    },
-                    {
-                      "type": "SYMBOL",
-                      "name": "dimension"
-                    }
-                  ]
-                }
-              },
-              {
-                "type": "STRING",
-                "value": ";"
               }
             ]
           }
+        },
+        {
+          "type": "STRING",
+          "value": ";"
         }
       ]
     },

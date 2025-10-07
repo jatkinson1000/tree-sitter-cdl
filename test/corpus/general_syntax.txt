@@ -145,8 +145,9 @@ dimensions:
 (dataset
   (dataset_id)
   (dimensions_section
-    (dimension
-      (identifier))))
+    (dimension_declarations
+      (dimension
+        name: (identifier)))))
 
 ===========================
 Identifier Valid with UTF8
@@ -162,8 +163,9 @@ dimensions:
 (dataset
   (dataset_id)
   (dimensions_section
-    (dimension
-      (identifier))))
+    (dimension_declarations
+      (dimension
+        name: (identifier)))))
 
 ==============================================
 Identifier Valid starting with escaped number
@@ -179,8 +181,9 @@ dimensions:
 (dataset
   (dataset_id)
   (dimensions_section
-    (dimension
-      (identifier))))
+    (dimension_declarations
+      (dimension
+        name: (identifier)))))
 
 ==================================================
 Identifier Invalid starting with unescaped number
@@ -208,8 +211,9 @@ dimensions:
 (dataset
   (dataset_id)
   (dimensions_section
-    (dimension
-      (identifier))))
+    (dimension_declarations
+      (dimension
+        name: (identifier)))))
 
 =====================================
 Identifier Valid starting underscore
@@ -225,8 +229,9 @@ dimensions:
 (dataset
   (dataset_id)
   (dimensions_section
-    (dimension
-      (identifier))))
+    (dimension_declarations
+      (dimension
+        name: (identifier)))))
 
 ====================================
 Identifier Invalid containing space
@@ -266,8 +271,9 @@ dimensions:
 (dataset
   (dataset_id)
   (dimensions_section
-    (dimension
-      (identifier))))
+    (dimension_declarations
+      (dimension
+        name: (identifier)))))
 
 ================================
 Identifier Invalid containing =
@@ -308,8 +314,9 @@ dimensions:
 (dataset
   (dataset_id)
   (dimensions_section
-    (dimension
-      (identifier))))
+    (dimension_declarations
+      (dimension
+        name: (identifier)))))
 
 ===================================================
 Identifier Invalid starting with escaped special [

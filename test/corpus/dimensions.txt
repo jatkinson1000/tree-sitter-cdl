@@ -70,8 +70,9 @@ netcdf basic {
 (dataset
   (dataset_id)
   (dimensions_section
-    (dimension
-      name: (identifier))))
+    (dimension_declarations
+      (dimension
+        name: (identifier)))))
 
 ========================================
 Dataset with single unlimited dimension
@@ -87,8 +88,9 @@ netcdf basic {
 (dataset
   (dataset_id)
   (dimensions_section
-    (dimension
-      name: (identifier))))
+    (dimension_declarations
+      (dimension
+        name: (identifier)))))
 
 ========================================
 Dataset with single UNLIMITED dimension
@@ -104,8 +106,9 @@ netcdf basic {
 (dataset
   (dataset_id)
   (dimensions_section
-    (dimension
-      name: (identifier))))
+    (dimension_declarations
+      (dimension
+        name: (identifier)))))
 
 =================================================================
 Dataset with single dimension and invalid dimensions declaration
@@ -147,12 +150,15 @@ netcdf basic {
 (dataset
   (dataset_id)
   (dimensions_section
-    (dimension
-      name: (identifier))
-    (dimension
-      name: (identifier))
-    (dimension
-      name: (identifier))))
+    (dimension_declarations
+      (dimension
+        name: (identifier)))
+    (dimension_declarations
+      (dimension
+        name: (identifier)))
+    (dimension_declarations
+      (dimension
+        name: (identifier)))))
 
 =========================================
 Dataset with multiple dimensions as list
@@ -168,12 +174,13 @@ netcdf basic {
 (dataset
   (dataset_id)
   (dimensions_section
-    (dimension
-      name: (identifier))
-    (dimension
-      name: (identifier))
-    (dimension
-      name: (identifier))))
+    (dimension_declarations
+      (dimension
+        name: (identifier))
+      (dimension
+        name: (identifier))
+      (dimension
+        name: (identifier)))))
 
 ===================================================
 Dataset with invalid dimensions list missing comma
@@ -202,12 +209,14 @@ netcdf basic {
 (dataset
   (dataset_id)
   (dimensions_section
-    (dimension
-      name: (identifier))
-    (dimension
-      name: (identifier))
-    (dimension
-      name: (identifier))))
+    (dimension_declarations
+      (dimension
+        name: (identifier))
+      (dimension
+        name: (identifier)))
+    (dimension_declarations
+      (dimension
+        name: (identifier)))))
 
 ========================================
 Dataset with invalid negative dimension
