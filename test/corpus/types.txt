@@ -1645,3 +1645,265 @@ netcdf basic {
 }
 
 ---
+
+================================================
+string attribute
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        string a:attr_str = "The quick brown fox.";
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (string)))))
+
+================================================
+string attribute single
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        string a:attr_str = "a";
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (string)))))
+
+================================================
+string attribute escape
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        string a:attr_str = "abc\ndefg";
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (string)))))
+
+================================================
+string attribute space
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        string a:attr_str = "abc defg";
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (string)))))
+
+================================================
+string attribute symbol
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        string a:attr_str = "abc~defg";
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (string)))))
+
+================================================
+string attribute Octal
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        string a:attr_str = "a bell:\007";
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (string)))))
+
+================================================
+string attribute inline UTF8
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        string a:attr_str = "ä";
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (string)))))
+
+================================================
+string attribute Special "NIL"
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        string a:attr_str = "NIL";
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (string)))))
+
+================================================
+string attribute Invalid no closing quote
+:error
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        string a:attr_str = "asdf;
+}
+
+---
+
+================================================
+char attribute Invalid no closing quote space
+:error
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        string a:attr_str = "asdf ;
+}
+
+---

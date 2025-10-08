@@ -162,6 +162,7 @@ module.exports = grammar({
       $.integer,
       $.byte,
       $.char,
+      $.string,
     ),
 
     // Decimals, Octal, or Hex
@@ -206,6 +207,23 @@ module.exports = grammar({
         seq('\'', /\\[0-7]{1,3}/, '\''), // Escaped Octal
         seq('\'', /\\x[0-9a-fA-F]{1,2}/, '\''), // Escaped Hexadecimal
         seq('\'', /\\x[8-9a-fA-F][0-9a-fA-F]?/, '\''), // Undefined values > 127
+      ),
+    ),
+
+    // Strings
+    // Double quoted, always assumed UTF8, special case of "NIL" string.
+    string: $ => token(
+      choice(
+        seq(
+          '"',
+          repeat(choice(
+            /[^"\\]/, // Any char except " or \
+            /\\./, // Escaped chars
+            utf8Chars, // UTF-8 chars
+          )),
+          '"',
+        ),
+        '"NIL"', // Special constant "NIL"
       ),
     ),
 

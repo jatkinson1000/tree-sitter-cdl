@@ -177,6 +177,10 @@
         {
           "type": "integer",
           "named": true
+        },
+        {
+          "type": "string",
+          "named": true
         }
       ]
     }
@@ -278,19 +282,19 @@
   },
   {
     "type": "byte",
-    "named": false
+    "named": true
   },
   {
     "type": "byte",
-    "named": true
-  },
-  {
-    "type": "char",
-    "named": true
+    "named": false
   },
   {
     "type": "char",
     "named": false
+  },
+  {
+    "type": "char",
+    "named": true
   },
   {
     "type": "comment",
@@ -311,11 +315,11 @@
   },
   {
     "type": "float",
-    "named": false
+    "named": true
   },
   {
     "type": "float",
-    "named": true
+    "named": false
   },
   {
     "type": "identifier",
@@ -348,6 +352,10 @@
   {
     "type": "short",
     "named": false
+  },
+  {
+    "type": "string",
+    "named": true
   },
   {
     "type": "string",
