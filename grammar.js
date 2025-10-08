@@ -112,7 +112,7 @@ module.exports = grammar({
 
     // Types used in declarations
     type: $ => choice(
-      'byte', 'char', 'short', 'int', 'float', 'double', 'ubyte', 'ushort', 'uint', 'int64', 'uint64', 'string',
+      'char', 'byte', 'short', 'int', 'long', 'float', 'real', 'double', 'ubyte', 'ushort', 'uint', 'int64', 'uint64', 'string',
     ),
 
     // Comments exist anywhere on one line preceded by //

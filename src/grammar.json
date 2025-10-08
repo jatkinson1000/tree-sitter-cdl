@@ -342,11 +342,11 @@
       "members": [
         {
           "type": "STRING",
-          "value": "byte"
+          "value": "char"
         },
         {
           "type": "STRING",
-          "value": "char"
+          "value": "byte"
         },
         {
           "type": "STRING",
@@ -358,7 +358,15 @@
         },
         {
           "type": "STRING",
+          "value": "long"
+        },
+        {
+          "type": "STRING",
           "value": "float"
+        },
+        {
+          "type": "STRING",
+          "value": "real"
         },
         {
           "type": "STRING",

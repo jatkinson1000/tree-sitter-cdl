@@ -233,7 +233,15 @@
     "named": false
   },
   {
+    "type": "long",
+    "named": false
+  },
+  {
     "type": "netcdf",
+    "named": false
+  },
+  {
+    "type": "real",
     "named": false
   },
   {
