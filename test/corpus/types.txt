@@ -1,0 +1,581 @@
+================================================
+integer attribute
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_i = 1;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (integer)))))
+
+=========================================================
+negative integer attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_i = -1000;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (integer)))))
+
+=========================================================
+unsigned u integer attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_i = 42u;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (integer)))))
+
+=========================================================
+unsigned U integer attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_i = 42U;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (integer)))))
+
+=========================================================
+short 16bit integer attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_i = 42s;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (integer)))))
+
+=========================================================
+short S 16bit integer attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_i = 42S;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (integer)))))
+
+=========================================================
+long 32bit integer attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_i = 42l;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (integer)))))
+
+=========================================================
+long L 32bit integer attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_i = 42L;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (integer)))))
+
+=========================================================
+long long 64bit integer attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_i = 42ll;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (integer)))))
+
+=========================================================
+long long LL 64bit integer attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_i = 42LL;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (integer)))))
+
+=========================================================
+unsigned long long 64bit integer attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_i = 42ull;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (integer)))))
+
+=========================================================
+unsigned long long ULL 64bit integer attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_i = 42ULL;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (integer)))))
+
+=========================================================
+unsigned uLL long long 64bit integer attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_i = 42uLL;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (integer)))))
+
+=========================================================
+long long unsigned 64bit integer attribute
+:error
+// Should pass from spec, but does not in ncgen
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_i = 42llu;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (integer)))))
+
+=========================================================
+Octal attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_o = 0123;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (integer)))))
+
+=========================================================
+unsigned Octal attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_o = 0123u;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (integer)))))
+
+=========================================================
+long long 64bit Octal attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_o = 0123ll;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (integer)))))
+
+=========================================================
+Hexadecimal attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_o = 0x6f4;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (integer)))))
+
+=========================================================
+unsigned Hexadecimal attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_o = 0x6f4u;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (integer)))))
+
+=========================================================
+long long 64bit Hexadecimal attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_o = 0x6f4ll;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (integer)))))

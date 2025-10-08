@@ -17,6 +17,19 @@ const utf8Chars = /[\u0080-\uFFFF]/;
 const escapedDigits = seq('\\', /\d+/);
 const escapedChars = seq('\\', /[ !"#$%&'()*,:;<=>?\[\\\]^`{|}~]/);
 
+// integer suffixes s/S Short 16bit, l/L Long 32bit (deprecated), ll/LL Long Long 64bit
+// and u/U Unsigned.
+// u should be allowed either side of specifier by the CDL spec, but ncgen gives an error if after.
+const integer_suffix = choice(
+  /[uU]/, // Unsigned
+  /[sS]/, // Short
+  /[lL]{1,2}/, // Long or Long Long
+  /[uU][lL]{1,2}/, // Unsigned Long or Unsigned Long Long
+  // /[lL]{1,2}[uU]/, // Long Unsigned or Long Long Unsigned
+  /[uU][sS]/, // Unsigned Short
+  // /[sS][uU]/, // Short Unsigned
+);
+
 
 module.exports = grammar({
   name: 'cdl',
@@ -62,7 +75,12 @@ module.exports = grammar({
     // Can be a comma-separated list
     variables_section: $ => seq(
       'variables:',
-      repeat($.variable_declarations),
+      repeat(
+        choice(
+          $.variable_declarations,
+          $.attribute,
+        ),
+      ),
     ),
 
     variable_declarations: $ => seq(
@@ -80,6 +98,17 @@ module.exports = grammar({
       '(',
       commaSep($.identifier),
       ')',
+    ),
+
+    // Attributes
+    attribute: $ => seq(
+      optional(field('type', $.type)),
+      optional(field('variable', $.identifier)),
+      ':',
+      field('name', $.identifier),
+      '=',
+      field('value', commaSep($.value)),
+      ';',
     ),
 
     // Dataset ID can be any character except '{'
@@ -110,13 +139,32 @@ module.exports = grammar({
       ),
     ),
 
+    // Comments exist anywhere on one line preceded by //
+    comment: $ => token(seq('//', /.*/)),
+
     // Types used in declarations
     type: $ => choice(
       'char', 'byte', 'short', 'int', 'long', 'float', 'real', 'double', 'ubyte', 'ushort', 'uint', 'int64', 'uint64', 'string',
     ),
 
-    // Comments exist anywhere on one line preceded by //
-    comment: $ => token(seq('//', /.*/)),
+    // Constants used in CDL.
+    // These follow C: https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html#constants
+    // with a few additional caveats
+    value: $ => choice(
+      $.integer,
+    ),
+
+    // Decimals, Octal, or Hex
+    integer: $ => token(
+      seq(
+        choice(
+          /-?\d+/, // Decimal
+          /-?0[0-7]+/, // Octal
+          /-?0[xX][0-9a-fA-F]+/, // Hexadecimal
+        ),
+        optional(integer_suffix),
+      ),
+    ),
 
     // Statements should end in a ;
     statement: $ => seq($.identifier, ';'),

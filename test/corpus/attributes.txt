@@ -1,0 +1,99 @@
+===============================================
+single attribute
+===============================================
+
+netcdf basic {
+    variables:
+        float a ;
+        float a:attr = 1;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+        (attribute
+          type: (type)
+          variable: (identifier)
+          name: (identifier)
+          value: (value
+            (integer)))))
+
+===============================================
+single untyped attribute
+===============================================
+
+netcdf basic {
+    variables:
+        float a ;
+        a:attr = 1;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+        (attribute
+          variable: (identifier)
+          name: (identifier)
+          value: (value
+            (integer)))))
+
+===============================================
+single global attribute (typed)
+===============================================
+
+netcdf basic {
+    variables:
+        float a ;
+        float :attr = 1;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+        (attribute
+          type: (type)
+          name: (identifier)
+          value: (value
+            (integer)))))
+
+===============================================
+single global attribute (untyped)
+===============================================
+
+netcdf basic {
+    variables:
+        float a ;
+        :attr = 1;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+        (attribute
+          name: (identifier)
+          value: (value
+            (integer)))))

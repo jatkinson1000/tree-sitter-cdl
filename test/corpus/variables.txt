@@ -160,7 +160,7 @@ Dataset with single variable and invalid variables declaration
 ===============================================================
 
 netcdf basic {
-    dimensions;
+    variables;
         float a;
 }
 
@@ -172,7 +172,7 @@ Dataset with missing variable type
 ===================================
 
 netcdf basic {
-    dimensions;
+    variables;
         a(lat, lon) ;
 }
 
@@ -184,7 +184,7 @@ Dataset with missing variable
 ==============================
 
 netcdf basic {
-    dimensions;
+    variables;
         int ;
 }
 
