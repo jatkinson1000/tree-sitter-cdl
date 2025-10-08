@@ -1,0 +1,609 @@
+================================================
+types section
+================================================
+
+netcdf basic {
+    types:
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section))
+
+================================================
+enum type int
+================================================
+
+netcdf basic {
+    types:
+        int enum my_enum {first = 1} ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (enum_type
+      type: (type)
+      name: (identifier)
+      (enum_values
+        (enum_pair
+          identity: (identifier)
+          value: (const_int))))))
+
+================================================
+enum type int no semicolon
+================================================
+
+netcdf basic {
+    types:
+        int enum my_enum {first = 1}
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (enum_type
+      type: (type)
+      name: (identifier)
+      (enum_values
+        (enum_pair
+          identity: (identifier)
+          value: (const_int))))))
+
+================================================
+enum type uint
+================================================
+
+netcdf basic {
+    types:
+        uint enum my_enum {first = 1};
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (enum_type
+      type: (type)
+      name: (identifier)
+      (enum_values
+        (enum_pair
+          identity: (identifier)
+          value: (const_int))))))
+
+================================================
+enum negative values
+================================================
+
+netcdf basic {
+    types:
+        int enum my_enum {first = -1};
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (enum_type
+      type: (type)
+      name: (identifier)
+      (enum_values
+        (enum_pair
+          identity: (identifier)
+          value: (const_int))))))
+
+================================================
+enum zero values
+================================================
+
+netcdf basic {
+    types:
+        int enum my_enum {first = 0};
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (enum_type
+      type: (type)
+      name: (identifier)
+      (enum_values
+        (enum_pair
+          identity: (identifier)
+          value: (const_int))))))
+
+================================================
+enum multiple values
+================================================
+
+netcdf basic {
+    types:
+        int enum my_enum {first = 1, second=2, third = 123456789};
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (enum_type
+      type: (type)
+      name: (identifier)
+      (enum_values
+        (enum_pair
+          identity: (identifier)
+          value: (const_int))
+        (enum_pair
+          identity: (identifier)
+          value: (const_int))
+        (enum_pair
+          identity: (identifier)
+          value: (const_int))))))
+
+================================================
+enum invalid non-integer values
+:error
+================================================
+
+netcdf basic {
+    types:
+        int enum my_enum {first = 1.0};
+}
+
+---
+
+================================================
+opaque type
+================================================
+
+netcdf basic {
+    types:
+        opaque(3) my_opaque ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (opaque_type
+      size: (const_int)
+      name: (identifier))))
+
+================================================
+opaque type no semicolon
+================================================
+
+netcdf basic {
+    types:
+        opaque(3) my_opaque
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (opaque_type
+      size: (const_int)
+      name: (identifier))))
+
+================================================
+opaque type extra spacing
+================================================
+
+netcdf basic {
+    types:
+        opaque ( 3 ) my_opaque ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (opaque_type
+      size: (const_int)
+      name: (identifier))))
+
+================================================
+opaque type negative --- Not sure this is really allowed!!!
+================================================
+
+netcdf basic {
+    types:
+        opaque(-3) my_opaque ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (opaque_type
+      size: (const_int)
+      name: (identifier))))
+
+================================================
+opaque type u suffix --- This is rejected by ncgen!!!
+================================================
+
+netcdf basic {
+    types:
+        opaque(3u) my_opaque ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (opaque_type
+      size: (const_int)
+      name: (identifier))))
+
+================================================
+opaque type size 0 -- This is rejected by NetCDF!!!
+================================================
+
+netcdf basic {
+    types:
+        opaque(0) my_opaque ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (opaque_type
+      size: (const_int)
+      name: (identifier))))
+
+================================================
+opaque type Invalid float size
+:error
+================================================
+
+netcdf basic {
+    types:
+        opaque(3.14) my_opaque ;
+}
+
+---
+
+================================================
+opaque type Invalid missing brackets
+:error
+================================================
+
+netcdf basic {
+    types:
+        opaque 3.14 my_opaque ;
+}
+
+---
+
+================================================
+opaque type Invalid unclosed bracket
+:error
+================================================
+
+netcdf basic {
+    types:
+        opaque(3.14 my_opaque ;
+}
+
+---
+
+================================================
+vlen custom type
+================================================
+
+netcdf basic {
+    types:
+        custom_vlen_type(*) my_opaque ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (vlen_type
+      type: (typeref
+        (identifier))
+      name: (identifier))))
+
+================================================
+vlen primitive type
+================================================
+
+netcdf basic {
+    types:
+        float(*) my_opaque ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (vlen_type
+      type: (typeref
+        (type))
+      name: (identifier))))
+
+================================================
+vlen type no semicolon
+================================================
+
+netcdf basic {
+    types:
+        vlen(*) my_vlen
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (vlen_type
+      type: (typeref
+        (identifier))
+      name: (identifier))))
+
+================================================
+vlen type extra spacing
+================================================
+
+netcdf basic {
+    types:
+        vlen ( * ) my_vlen ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (vlen_type
+      type: (typeref
+        (identifier))
+      name: (identifier))))
+
+================================================
+vlen type Invalid missing brackets
+:error
+================================================
+
+netcdf basic {
+    types:
+        opaque * my_vlen ;
+}
+
+---
+
+================================================
+vlen type Invalid unclosed bracket
+:error
+================================================
+
+netcdf basic {
+    types:
+        vlen(* my_vlen ;
+}
+
+---
+
+================================================
+vlen type Invalid * replacement
+:error
+================================================
+
+netcdf basic {
+    types:
+        vlen(3) my_vlen ;
+}
+
+---
+
+================================================
+compound type
+================================================
+
+netcdf basic {
+    types:
+        compound my_compound{int my_int;} ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (compound_type
+      name: (identifier)
+      (compound_field
+        type: (typeref
+          (type))
+        (fieldspec
+          name: (identifier))))))
+
+================================================
+compound type missing semicolon
+================================================
+
+netcdf basic {
+    types:
+        compound my_compound{int my_int;}
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (compound_type
+      name: (identifier)
+      (compound_field
+        type: (typeref
+          (type))
+        (fieldspec
+          name: (identifier))))))
+
+================================================
+compound type spacing
+================================================
+
+netcdf basic {
+    types:
+        compound my_compound { int my_int ; } ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (compound_type
+      name: (identifier)
+      (compound_field
+        type: (typeref
+          (type))
+        (fieldspec
+          name: (identifier))))))
+
+================================================
+compound type multiple values
+================================================
+
+netcdf basic {
+    types:
+        compound my_compound{int my_int; float my_float; int my_other_int;} ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (compound_type
+      name: (identifier)
+      (compound_field
+        type: (typeref
+          (type))
+        (fieldspec
+          name: (identifier)))
+      (compound_field
+        type: (typeref
+          (type))
+        (fieldspec
+          name: (identifier)))
+      (compound_field
+        type: (typeref
+          (type))
+        (fieldspec
+          name: (identifier))))))
+
+================================================
+compound type multiple values primitive and custom
+================================================
+
+netcdf basic {
+    types:
+        compound my_compound{int my_int; float my_float; my_type my_type_name;} ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (compound_type
+      name: (identifier)
+      (compound_field
+        type: (typeref
+          (type))
+        (fieldspec
+          name: (identifier)))
+      (compound_field
+        type: (typeref
+          (type))
+        (fieldspec
+          name: (identifier)))
+      (compound_field
+        type: (typeref
+          (identifier))
+        (fieldspec
+          name: (identifier))))))
+
+================================================
+compound type formatted
+================================================
+
+netcdf basic {
+    types:
+        compound my_compound{
+            int my_int;
+            float my_float;
+            my_type my_type_name;
+        }
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (compound_type
+      name: (identifier)
+      (compound_field
+        type: (typeref
+          (type))
+        (fieldspec
+          name: (identifier)))
+      (compound_field
+        type: (typeref
+          (type))
+        (fieldspec
+          name: (identifier)))
+      (compound_field
+        type: (typeref
+          (identifier))
+        (fieldspec
+          name: (identifier))))))
+
+================================================
+compound type Invalid missing internal semicolon
+:error
+================================================
+
+netcdf basic {
+    types:
+        compound my_compound{int my_int} ;
+}
+
+---
+
+================================================
+compound type Invalid empty
+:error
+================================================
+
+netcdf basic {
+    types:
+        compound my_compound{} ;
+}
+
+---

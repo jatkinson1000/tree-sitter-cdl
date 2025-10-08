@@ -50,6 +50,63 @@
     }
   },
   {
+    "type": "compound_field",
+    "named": true,
+    "fields": {
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "typeref",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "fieldspec",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "compound_type",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "compound_field",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "const_int",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "dataset",
     "named": true,
     "root": true,
@@ -64,6 +121,10 @@
         },
         {
           "type": "dimensions_section",
+          "named": true
+        },
+        {
+          "type": "types_section",
           "named": true
         },
         {
@@ -150,9 +211,189 @@
     }
   },
   {
+    "type": "enum_pair",
+    "named": true,
+    "fields": {
+      "identity": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "const_int",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "enum_type",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "enum_values",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enum_values",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "enum_pair",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "field_dimensions_spec",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "fieldspec",
+    "named": true,
+    "fields": {
+      "dimensions": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "field_dimensions_spec",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "opaque_type",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "size": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "const_int",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "type",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "typeref",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "types_section",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "compound_type",
+          "named": true
+        },
+        {
+          "type": "enum_type",
+          "named": true
+        },
+        {
+          "type": "opaque_type",
+          "named": true
+        },
+        {
+          "type": "vlen_type",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "value",
@@ -257,6 +498,32 @@
     }
   },
   {
+    "type": "vlen_type",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "typeref",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "(",
     "named": false
   },
@@ -265,7 +532,15 @@
     "named": false
   },
   {
+    "type": "*",
+    "named": false
+  },
+  {
     "type": ",",
+    "named": false
+  },
+  {
+    "type": "-",
     "named": false
   },
   {
@@ -282,24 +557,28 @@
   },
   {
     "type": "byte",
-    "named": true
+    "named": false
   },
   {
     "type": "byte",
-    "named": false
-  },
-  {
-    "type": "char",
-    "named": false
+    "named": true
   },
   {
     "type": "char",
     "named": true
+  },
+  {
+    "type": "char",
+    "named": false
   },
   {
     "type": "comment",
     "named": true,
     "extra": true
+  },
+  {
+    "type": "compound",
+    "named": false
   },
   {
     "type": "dataset_id",
@@ -314,12 +593,16 @@
     "named": false
   },
   {
-    "type": "float",
-    "named": true
+    "type": "enum",
+    "named": false
   },
   {
     "type": "float",
     "named": false
+  },
+  {
+    "type": "float",
+    "named": true
   },
   {
     "type": "identifier",
@@ -346,6 +629,10 @@
     "named": false
   },
   {
+    "type": "opaque",
+    "named": false
+  },
+  {
     "type": "real",
     "named": false
   },
@@ -359,6 +646,10 @@
   },
   {
     "type": "string",
+    "named": false
+  },
+  {
+    "type": "types:",
     "named": false
   },
   {

@@ -13,9 +13,9 @@ const letterOrUnderscore = /[a-zA-Z_]/;
 const ncSpecialChars = /[a-zA-Z0-9_.@+-]/; // Original set - do not need to be escaped
 const ncUnlimited = /unlimited|UNLIMITED/;
 const utf8Chars = /[\u0080-\uFFFF]/;
-
 const escapedDigits = seq('\\', /\d+/);
 const escapedChars = seq('\\', /[ !"#$%&'()*,:;<=>?\[\\\]^`{|}~]/);
+
 
 // integer suffixes s/S Short 16bit, l/L Long 32bit (deprecated), ll/LL Long Long 64bit
 // and u/U Unsigned.
@@ -53,10 +53,82 @@ module.exports = grammar({
       'netcdf',
       $.dataset_id,
       '{',
+      optional($.types_section),
       optional($.dimensions_section),
       optional($.variables_section),
       '}',
     ),
+
+
+    // Types
+    types_section: $ => seq(
+      'types:',
+      repeat(choice(
+        $.enum_type,
+        $.vlen_type,
+        $.opaque_type,
+        $.compound_type,
+      )),
+    ),
+
+    enum_type: $ => seq(
+      field('type', $.type),
+      'enum',
+      field('name', $.identifier),
+      $.enum_values,
+      optional(';'),
+    ),
+
+    enum_values: $ => seq(
+      '{', commaSep($.enum_pair), '}',
+    ),
+
+    enum_pair: $ => seq(
+      field('identity', $.identifier),
+      '=',
+      field('value', $.const_int),
+    ),
+
+    opaque_type: $ => seq(
+      'opaque',
+      '(', field('size', $.const_int), ')',
+      field('name', $.identifier),
+      optional(';'),
+    ),
+
+    vlen_type: $ => seq(
+      field('type', $.typeref),
+      '(', '*', ')',
+      field('name', $.identifier),
+      optional(';'),
+    ),
+
+    compound_type: $ => seq(
+      'compound',
+      field('name', $.identifier),
+      '{',
+      repeat1($.compound_field),
+      '}',
+      optional(';'),
+    ),
+
+    compound_field: $ => seq(
+      field('type', $.typeref),
+      commaSep($.fieldspec),
+      ';',
+    ),
+
+    fieldspec: $ => seq(
+      field('name', $.identifier),
+      optional(field('dimensions', $.field_dimensions_spec)),
+    ),
+
+    field_dimensions_spec: $ => seq(
+      '(',
+      commaSep(/\d+[uU]?/),
+      ')',
+    ),
+
 
     // Dimensions
     // Can be a comma-separated list
@@ -77,6 +149,7 @@ module.exports = grammar({
     ),
 
     dimension_size: $ => choice(decimalDigits, ncUnlimited),
+
 
     // Variables
     // Can be a comma-separated list
@@ -107,6 +180,7 @@ module.exports = grammar({
       ')',
     ),
 
+
     // Attributes
     attribute: $ => seq(
       optional(field('type', $.type)),
@@ -117,6 +191,7 @@ module.exports = grammar({
       field('value', commaSep($.value)),
       ';',
     ),
+
 
     // Dataset ID can be any character except '{'
     // Note also that the CDL dataset ID is irrelevant as generated file is named based
@@ -153,6 +228,13 @@ module.exports = grammar({
     type: $ => choice(
       'char', 'byte', 'short', 'int', 'long', 'float', 'real', 'double', 'ubyte', 'ushort', 'uint', 'int64', 'uint64', 'string',
     ),
+
+    // typeref handles the fact that types can declare as a primitive type, or be a user-defined type
+    typeref: $ => choice(
+      $.type,
+      $.identifier,
+    ),
+
 
     // Constants used in CDL.
     // These follow C: https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html#constants
@@ -229,6 +311,16 @@ module.exports = grammar({
 
     // Statements should end in a ;
     statement: $ => seq($.identifier, ';'),
+
+
+    // Other useful types we can define in places
+    // Constant positive integer with optional U suffix
+    const_int: $ => seq(
+      optional('-'),
+      /\d+/,
+      optional(/[uU]/),
+    ),
+
   },
 
 });
