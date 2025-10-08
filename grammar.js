@@ -49,8 +49,7 @@ module.exports = grammar({
     ),
 
     dimension_declarations: $ => seq(
-      $.dimension,
-      repeat(seq(',', $.dimension)),
+      commaSep($.dimension),
       ';',
     ),
 
@@ -69,8 +68,7 @@ module.exports = grammar({
 
     variable_declarations: $ => seq(
       field('type', type),
-      $.variable,
-      repeat(seq(',', $.variable)),
+      commaSep($.variable),
       ';',
     ),
 
@@ -81,8 +79,7 @@ module.exports = grammar({
 
     dimension_spec: $ => seq(
       '(',
-      $.identifier,
-      repeat(seq(',', $.identifier)),
+      commaSep($.identifier),
       ')',
     ),
 
@@ -122,3 +119,15 @@ module.exports = grammar({
   },
 
 });
+
+/**
+ * Creates a rule to match one or more of the rules separated by a comma
+ * Based on similar rule from tree-sitter-json
+ *
+ * @param {RuleOrLiteral} rule
+ *
+ * @returns {SeqRule}
+ */
+function commaSep(rule) {
+  return seq(rule, repeat(seq(',', rule)));
+}
