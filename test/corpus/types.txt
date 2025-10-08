@@ -1367,3 +1367,281 @@ netcdf basic {
 }
 
 ---
+
+================================================
+char attribute
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        char a:attr_c = 'a';
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (char)))))
+
+================================================
+char attribute ~
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        char a:attr_c = '~';
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (char)))))
+
+================================================
+char attribute escaped \n
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        char a:attr_c = '\n';
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (char)))))
+
+================================================
+char attribute escaped \t
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        char a:attr_c = '\t';
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (char)))))
+
+================================================
+char attribute non-standard C escape
+// accepted by ncgen and cast to single char
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        char a:attr_c = '\d';
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (char)))))
+
+================================================
+char attribute Octal
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        char a:attr_c = '\123';
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (char)))))
+
+================================================
+char attribute Hexadecimal
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        char a:attr_c = '\x7f';
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (char)))))
+
+================================================
+char attribute undefined allowed
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        char a:attr_c = '\xF3';
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (char)))))
+
+================================================
+char attribute Invalid multiple
+:error
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        char a:attr_c = 'ab';
+}
+
+---
+
+================================================
+char attribute Invalid no closing quote
+:error
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        char a:attr_c = 'a;
+}
+
+---
+
+================================================
+char attribute Invalid no closing quote
+:error
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        char a:attr_c = ' ;
+}
+
+---

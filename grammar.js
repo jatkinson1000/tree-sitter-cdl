@@ -161,6 +161,7 @@ module.exports = grammar({
       $.float,
       $.integer,
       $.byte,
+      $.char,
     ),
 
     // Decimals, Octal, or Hex
@@ -192,6 +193,19 @@ module.exports = grammar({
       seq(
         /0|[1-9]\d?|1\d{2}|2[0-4]\d|25[0-5]/,
         /[bB]/,
+      ),
+    ),
+
+    // Chars (Deprecated in favour of strings)
+    // Should be in printable ASCII range, one char or one escaped char.
+    // Values over 127 allowed but undefined.
+    char: $ => token(
+      choice(
+        seq('\'', /[ -~]/, '\''), // Single printable ASCII char not ' or \
+        seq('\'', /\\./, '\''), // Escaped char (non standard sequences are unescaped by ncgen)
+        seq('\'', /\\[0-7]{1,3}/, '\''), // Escaped Octal
+        seq('\'', /\\x[0-9a-fA-F]{1,2}/, '\''), // Escaped Hexadecimal
+        seq('\'', /\\x[8-9a-fA-F][0-9a-fA-F]?/, '\''), // Undefined values > 127
       ),
     ),
 
