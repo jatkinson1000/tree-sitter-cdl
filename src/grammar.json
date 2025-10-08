@@ -514,6 +514,10 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "float"
+        },
+        {
+          "type": "SYMBOL",
           "name": "integer"
         }
       ]
@@ -565,6 +569,61 @@
                   {
                     "type": "PATTERN",
                     "value": "[uU][sS]"
+                  }
+                ]
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "float": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "PATTERN",
+                "value": "-?\\d+\\.\\d*([eE][+-]?\\d+)?[fFdDlL]?"
+              },
+              {
+                "type": "PATTERN",
+                "value": "-?\\.\\d+([eE][+-]?\\d+)?[fFdDlL]?"
+              },
+              {
+                "type": "PATTERN",
+                "value": "-?\\d+[eE][+-]?\\d+"
+              }
+            ]
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "PATTERN",
+                        "value": "[fF]"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "[dD]"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "[lL]"
+                      }
+                    ]
                   }
                 ]
               },

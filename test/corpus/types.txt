@@ -579,3 +579,630 @@ netcdf basic {
         name: (identifier)
         value: (value
           (integer)))))
+
+================================================
+float attribute
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 3.14159;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (float)))))
+
+================================================
+float attribute negative
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = -3.14159;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (float)))))
+
+================================================
+float attribute characteristic and point
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 3.;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (float)))))
+
+================================================
+float attribute point and mantissa
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = .14159;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (float)))))
+
+================================================
+float attribute scientific notation
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 10.24356e25;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (float)))))
+
+================================================
+float attribute scientific notation upper E
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 10.24356E25;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (float)))))
+
+================================================
+float attribute scientific notation negative exponent
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 10.24356e-25;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (float)))))
+
+================================================
+float attribute scientific notation negative exponent
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 10.24356e-25;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (float)))))
+
+================================================
+float attribute scientific notation characteristic point
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 10.e25;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (float)))))
+
+================================================
+float attribute scientific notation characteristic
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 10e25;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (float)))))
+
+================================================
+float attribute scientific notation mantissa
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = .14159e25;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (float)))))
+
+================================================
+float attribute F suffix
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 3.14159F ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (float)))))
+
+================================================
+float attribute f suffix
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 3.14159f ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (float)))))
+
+================================================
+float attribute D suffix
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 3.14159D ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (float)))))
+
+================================================
+float attribute d suffix
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 3.14159d ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (float)))))
+
+================================================
+float attribute L suffix
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 3.14159L ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (float)))))
+
+================================================
+float attribute l suffix
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 3.14159l ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (float)))))
+================================================
+float attribute scientific notation suffix
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 10e25f;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (float)))))
+
+
+================================================
+float attribute Invalid space after point
+:error
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 3. 14159L ;
+}
+
+---
+
+================================================
+float attribute Invalid space before point
+:error
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 3 .14159L ;
+}
+
+---
+
+================================================
+float attribute Invalid 'Fortran' D notation
+:error
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 3.14159D10 ;
+}
+
+---
+
+================================================
+float attribute Invalid space before suffix
+:error
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 3.14159 D ;
+}
+
+---
+
+================================================
+float attribute Invalid point only
+:error
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = . ;
+}
+
+---
+
+================================================
+float attribute Invalid no scientific exponent
+:error
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 1.0e ;
+}
+
+---
+
+================================================
+float attribute Invalid scientific exponent no number
+:error
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = e-5 ;
+}
+
+---

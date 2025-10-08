@@ -29,6 +29,13 @@ const integer_suffix = choice(
   /[uU][sS]/, // Unsigned Short
   // /[sS][uU]/, // Short Unsigned
 );
+const float_suffix = choice(
+  choice(
+    /[fF]/, // Float
+    /[dD]/, // Double
+    /[lL]/, // Long double
+  ),
+);
 
 
 module.exports = grammar({
@@ -151,6 +158,7 @@ module.exports = grammar({
     // These follow C: https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html#constants
     // with a few additional caveats
     value: $ => choice(
+      $.float,
       $.integer,
     ),
 
@@ -163,6 +171,18 @@ module.exports = grammar({
           /-?0[xX][0-9a-fA-F]+/, // Hexadecimal
         ),
         optional(integer_suffix),
+      ),
+    ),
+
+    // Floats
+    float: $ => token(
+      seq(
+        choice(
+          /-?\d+\.\d*([eE][+-]?\d+)?[fFdDlL]?/, // Digits before and optional digits after the decimal point with optional scientific notation
+          /-?\.\d+([eE][+-]?\d+)?[fFdDlL]?/, // Decimal point followed by digits
+          /-?\d+[eE][+-]?\d+/, // Scientific notation without a decimal point
+        ),
+        optional(float_suffix),
       ),
     ),
 

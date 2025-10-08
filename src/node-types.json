@@ -163,6 +163,10 @@
       "required": true,
       "types": [
         {
+          "type": "float",
+          "named": true
+        },
+        {
           "type": "integer",
           "named": true
         }
@@ -292,6 +296,10 @@
   {
     "type": "float",
     "named": false
+  },
+  {
+    "type": "float",
+    "named": true
   },
   {
     "type": "identifier",
