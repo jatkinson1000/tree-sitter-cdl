@@ -72,7 +72,8 @@ netcdf basic {
   (dimensions_section
     (dimension_declarations
       (dimension
-        name: (identifier)))))
+        name: (identifier)
+        size: (dimension_size)))))
 
 ========================================
 Dataset with single unlimited dimension
@@ -90,7 +91,8 @@ netcdf basic {
   (dimensions_section
     (dimension_declarations
       (dimension
-        name: (identifier)))))
+        name: (identifier)
+        size: (dimension_size)))))
 
 ========================================
 Dataset with single UNLIMITED dimension
@@ -108,7 +110,8 @@ netcdf basic {
   (dimensions_section
     (dimension_declarations
       (dimension
-        name: (identifier)))))
+        name: (identifier)
+        size: (dimension_size)))))
 
 =================================================================
 Dataset with single dimension and invalid dimensions declaration
@@ -152,13 +155,16 @@ netcdf basic {
   (dimensions_section
     (dimension_declarations
       (dimension
-        name: (identifier)))
+        name: (identifier)
+        size: (dimension_size)))
     (dimension_declarations
       (dimension
-        name: (identifier)))
+        name: (identifier)
+        size: (dimension_size)))
     (dimension_declarations
       (dimension
-        name: (identifier)))))
+        name: (identifier)
+        size: (dimension_size)))))
 
 =========================================
 Dataset with multiple dimensions as list
@@ -176,11 +182,14 @@ netcdf basic {
   (dimensions_section
     (dimension_declarations
       (dimension
-        name: (identifier))
+        name: (identifier)
+        size: (dimension_size))
       (dimension
-        name: (identifier))
+        name: (identifier)
+        size: (dimension_size))
       (dimension
-        name: (identifier)))))
+        name: (identifier)
+        size: (dimension_size)))))
 
 ===================================================
 Dataset with invalid dimensions list missing comma
@@ -211,12 +220,15 @@ netcdf basic {
   (dimensions_section
     (dimension_declarations
       (dimension
-        name: (identifier))
+        name: (identifier)
+        size: (dimension_size))
       (dimension
-        name: (identifier)))
+        name: (identifier)
+        size: (dimension_size)))
     (dimension_declarations
       (dimension
-        name: (identifier)))))
+        name: (identifier)
+        size: (dimension_size)))))
 
 ========================================
 Dataset with invalid negative dimension

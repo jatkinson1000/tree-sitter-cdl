@@ -147,7 +147,8 @@ dimensions:
   (dimensions_section
     (dimension_declarations
       (dimension
-        name: (identifier)))))
+        name: (identifier)
+        size: (dimension_size)))))
 
 ===========================
 Identifier Valid with UTF8
@@ -165,7 +166,8 @@ dimensions:
   (dimensions_section
     (dimension_declarations
       (dimension
-        name: (identifier)))))
+        name: (identifier)
+        size: (dimension_size)))))
 
 ==============================================
 Identifier Valid starting with escaped number
@@ -183,7 +185,8 @@ dimensions:
   (dimensions_section
     (dimension_declarations
       (dimension
-        name: (identifier)))))
+        name: (identifier)
+        size: (dimension_size)))))
 
 ==================================================
 Identifier Invalid starting with unescaped number
@@ -213,7 +216,8 @@ dimensions:
   (dimensions_section
     (dimension_declarations
       (dimension
-        name: (identifier)))))
+        name: (identifier)
+        size: (dimension_size)))))
 
 =====================================
 Identifier Valid starting underscore
@@ -231,7 +235,8 @@ dimensions:
   (dimensions_section
     (dimension_declarations
       (dimension
-        name: (identifier)))))
+        name: (identifier)
+        size: (dimension_size)))))
 
 ====================================
 Identifier Invalid containing space
@@ -273,7 +278,8 @@ dimensions:
   (dimensions_section
     (dimension_declarations
       (dimension
-        name: (identifier)))))
+        name: (identifier)
+        size: (dimension_size)))))
 
 ================================
 Identifier Invalid containing =
@@ -316,7 +322,8 @@ dimensions:
   (dimensions_section
     (dimension_declarations
       (dimension
-        name: (identifier)))))
+        name: (identifier)
+        size: (dimension_size)))))
 
 ===================================================
 Identifier Invalid starting with escaped special [

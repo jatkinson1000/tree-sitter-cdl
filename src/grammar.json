@@ -116,18 +116,22 @@
           "type": "FIELD",
           "name": "size",
           "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "PATTERN",
-                "value": "\\d+"
-              },
-              {
-                "type": "PATTERN",
-                "value": "unlimited|UNLIMITED"
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "dimension_size"
           }
+        }
+      ]
+    },
+    "dimension_size": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "\\d+"
+        },
+        {
+          "type": "PATTERN",
+          "value": "unlimited|UNLIMITED"
         }
       ]
     },

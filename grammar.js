@@ -53,8 +53,10 @@ module.exports = grammar({
     dimension: $ => seq(
       field('name', $.identifier),
       '=',
-      field('size', choice(decimalDigits, ncUnlimited)),
+      field('size', $.dimension_size),
     ),
+
+    dimension_size: $ => choice(decimalDigits, ncUnlimited),
 
     // Variables
     // Can be a comma-separated list

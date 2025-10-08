@@ -36,6 +36,16 @@
             "named": true
           }
         ]
+      },
+      "size": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "dimension_size",
+            "named": true
+          }
+        ]
       }
     }
   },
@@ -53,6 +63,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "dimension_size",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "dimension_spec",
