@@ -85,6 +85,11 @@
     }
   },
   {
+    "type": "type",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "variable",
     "named": true,
     "fields": {
@@ -119,52 +124,8 @@
         "required": true,
         "types": [
           {
-            "type": "byte",
-            "named": false
-          },
-          {
-            "type": "char",
-            "named": false
-          },
-          {
-            "type": "double",
-            "named": false
-          },
-          {
-            "type": "float",
-            "named": false
-          },
-          {
-            "type": "int",
-            "named": false
-          },
-          {
-            "type": "int64",
-            "named": false
-          },
-          {
-            "type": "short",
-            "named": false
-          },
-          {
-            "type": "string",
-            "named": false
-          },
-          {
-            "type": "ubyte",
-            "named": false
-          },
-          {
-            "type": "uint",
-            "named": false
-          },
-          {
-            "type": "uint64",
-            "named": false
-          },
-          {
-            "type": "ushort",
-            "named": false
+            "type": "type",
+            "named": true
           }
         ]
       }

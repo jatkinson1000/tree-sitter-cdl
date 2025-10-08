@@ -16,9 +16,6 @@ const utf8Chars = /[\u0080-\uFFFF]/;
 
 const escapedDigits = seq('\\', /\d+/);
 const escapedChars = seq('\\', /[ !"#$%&'()*,:;<=>?\[\\\]^`{|}~]/);
-const type = choice(
-  'byte', 'char', 'short', 'int', 'float', 'double', 'ubyte', 'ushort', 'uint', 'int64', 'uint64', 'string',
-);
 
 
 module.exports = grammar({
@@ -67,7 +64,7 @@ module.exports = grammar({
     ),
 
     variable_declarations: $ => seq(
-      field('type', type),
+      field('type', $.type),
       commaSep($.variable),
       ';',
     ),
@@ -109,6 +106,11 @@ module.exports = grammar({
           ),
         ),
       ),
+    ),
+
+    // Types used in declarations
+    type: $ => choice(
+      'byte', 'char', 'short', 'int', 'float', 'double', 'ubyte', 'ushort', 'uint', 'int64', 'uint64', 'string',
     ),
 
     // Comments exist anywhere on one line preceded by //

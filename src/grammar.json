@@ -154,57 +154,8 @@
           "type": "FIELD",
           "name": "type",
           "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "byte"
-              },
-              {
-                "type": "STRING",
-                "value": "char"
-              },
-              {
-                "type": "STRING",
-                "value": "short"
-              },
-              {
-                "type": "STRING",
-                "value": "int"
-              },
-              {
-                "type": "STRING",
-                "value": "float"
-              },
-              {
-                "type": "STRING",
-                "value": "double"
-              },
-              {
-                "type": "STRING",
-                "value": "ubyte"
-              },
-              {
-                "type": "STRING",
-                "value": "ushort"
-              },
-              {
-                "type": "STRING",
-                "value": "uint"
-              },
-              {
-                "type": "STRING",
-                "value": "int64"
-              },
-              {
-                "type": "STRING",
-                "value": "uint64"
-              },
-              {
-                "type": "STRING",
-                "value": "string"
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "type"
           }
         },
         {
@@ -381,6 +332,59 @@
           }
         ]
       }
+    },
+    "type": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "byte"
+        },
+        {
+          "type": "STRING",
+          "value": "char"
+        },
+        {
+          "type": "STRING",
+          "value": "short"
+        },
+        {
+          "type": "STRING",
+          "value": "int"
+        },
+        {
+          "type": "STRING",
+          "value": "float"
+        },
+        {
+          "type": "STRING",
+          "value": "double"
+        },
+        {
+          "type": "STRING",
+          "value": "ubyte"
+        },
+        {
+          "type": "STRING",
+          "value": "ushort"
+        },
+        {
+          "type": "STRING",
+          "value": "uint"
+        },
+        {
+          "type": "STRING",
+          "value": "int64"
+        },
+        {
+          "type": "STRING",
+          "value": "uint64"
+        },
+        {
+          "type": "STRING",
+          "value": "string"
+        }
+      ]
     },
     "comment": {
       "type": "TOKEN",

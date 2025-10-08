@@ -71,6 +71,7 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
+      type: (type)
       (variable
         name: (identifier)))))
 
@@ -89,6 +90,7 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
+      type: (type)
       (variable
         name: (identifier)
         dimensions: (dimension_spec
@@ -109,6 +111,7 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
+      type: (type)
       (variable
         name: (identifier)
         dimensions: (dimension_spec
@@ -202,6 +205,7 @@ netcdf basic {
   (dataset_id)
     (variables_section
       (variable_declarations
+        type: (type)
         (variable
           name: (identifier))
         (variable
@@ -244,17 +248,19 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
+      type: (type)
       (variable
-        (identifier))
+        name: (identifier))
       (variable
-        (identifier)
-        (dimension_spec
+        name: (identifier)
+        dimensions: (dimension_spec
           (identifier)
           (identifier))))
     (variable_declarations
+      type: (type)
       (variable
-        (identifier)
-        (dimension_spec
+        name: (identifier)
+        dimensions: (dimension_spec
           (identifier)
           (identifier)
           (identifier))))))
