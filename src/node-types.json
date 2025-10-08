@@ -163,6 +163,10 @@
       "required": true,
       "types": [
         {
+          "type": "byte",
+          "named": true
+        },
+        {
           "type": "float",
           "named": true
         },
@@ -273,6 +277,10 @@
     "named": false
   },
   {
+    "type": "byte",
+    "named": true
+  },
+  {
     "type": "char",
     "named": false
   },
@@ -295,11 +303,11 @@
   },
   {
     "type": "float",
-    "named": false
+    "named": true
   },
   {
     "type": "float",
-    "named": true
+    "named": false
   },
   {
     "type": "identifier",

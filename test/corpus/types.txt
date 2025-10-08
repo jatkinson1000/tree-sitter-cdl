@@ -1206,3 +1206,164 @@ netcdf basic {
 }
 
 ---
+
+================================================
+byte attribute b
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        byte a:attr_f = 36b;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (byte)))))
+
+================================================
+byte attribute B
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        byte a:attr_f = 36B;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (byte)))))
+
+================================================
+byte attribute 0
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        byte a:attr_f = 0B;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (byte)))))
+
+================================================
+byte attribute 255
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        byte a:attr_f = 255B;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (type)
+      (variable
+        name: (identifier)))
+      (comment)
+      (attribute
+        type: (type)
+        variable: (identifier)
+        name: (identifier)
+        value: (value
+          (byte)))))
+
+================================================
+byte attribute invalid negative
+:error
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        byte a:attr_f = -2B;
+}
+
+---
+
+================================================
+byte attribute invalid 256
+:error
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        byte a:attr_f = 256B;
+}
+
+---
+
+================================================
+byte attribute invalid B only
+:error
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        byte a:attr_f = B;
+}
+
+---

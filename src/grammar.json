@@ -519,6 +519,10 @@
         {
           "type": "SYMBOL",
           "name": "integer"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "byte"
         }
       ]
     },
@@ -631,6 +635,22 @@
                 "type": "BLANK"
               }
             ]
+          }
+        ]
+      }
+    },
+    "byte": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "PATTERN",
+            "value": "0|[1-9]\\d?|1\\d{2}|2[0-4]\\d|25[0-5]"
+          },
+          {
+            "type": "PATTERN",
+            "value": "[bB]"
           }
         ]
       }

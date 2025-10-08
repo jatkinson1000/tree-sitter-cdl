@@ -160,6 +160,7 @@ module.exports = grammar({
     value: $ => choice(
       $.float,
       $.integer,
+      $.byte,
     ),
 
     // Decimals, Octal, or Hex
@@ -183,6 +184,14 @@ module.exports = grammar({
           /-?\d+[eE][+-]?\d+/, // Scientific notation without a decimal point
         ),
         optional(float_suffix),
+      ),
+    ),
+
+    // Bytes - integer from 0 to 255 with a mandatory b/B suffix
+    byte: $ => token(
+      seq(
+        /0|[1-9]\d?|1\d{2}|2[0-4]\d|25[0-5]/,
+        /[bB]/,
       ),
     ),
 
