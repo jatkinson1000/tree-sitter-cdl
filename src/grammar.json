@@ -530,12 +530,12 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "PATTERN",
-          "value": "\\d+"
+          "type": "SYMBOL",
+          "name": "const_positive_int"
         },
         {
-          "type": "PATTERN",
-          "value": "unlimited|UNLIMITED"
+          "type": "SYMBOL",
+          "name": "nc_unlimited"
         }
       ]
     },
@@ -1313,6 +1313,13 @@
         "value": "_"
       }
     },
+    "nc_unlimited": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "unlimited|UNLIMITED"
+      }
+    },
     "statement": {
       "type": "SEQ",
       "members": [
@@ -1358,6 +1365,30 @@
           ]
         }
       ]
+    },
+    "const_positive_int": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "PATTERN",
+            "value": "\\d+"
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "PATTERN",
+                "value": "[uU]"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        ]
+      }
     }
   },
   "extras": [

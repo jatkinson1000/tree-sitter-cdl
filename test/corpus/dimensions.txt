@@ -73,7 +73,8 @@ netcdf basic {
     (dimension_declarations
       (dimension
         name: (identifier)
-        size: (dimension_size)))))
+        size: (dimension_size
+          (const_positive_int))))))
 
 ========================================
 Dataset with single unlimited dimension
@@ -92,7 +93,8 @@ netcdf basic {
     (dimension_declarations
       (dimension
         name: (identifier)
-        size: (dimension_size)))))
+        size: (dimension_size
+          (nc_unlimited))))))
 
 ========================================
 Dataset with single UNLIMITED dimension
@@ -111,7 +113,8 @@ netcdf basic {
     (dimension_declarations
       (dimension
         name: (identifier)
-        size: (dimension_size)))))
+        size: (dimension_size
+          (nc_unlimited))))))
 
 =================================================================
 Dataset with single dimension and invalid dimensions declaration
@@ -156,15 +159,18 @@ netcdf basic {
     (dimension_declarations
       (dimension
         name: (identifier)
-        size: (dimension_size)))
+        size: (dimension_size
+          (const_positive_int))))
     (dimension_declarations
       (dimension
         name: (identifier)
-        size: (dimension_size)))
+        size: (dimension_size
+          (const_positive_int))))
     (dimension_declarations
       (dimension
         name: (identifier)
-        size: (dimension_size)))))
+        size: (dimension_size
+          (nc_unlimited))))))
 
 =========================================
 Dataset with multiple dimensions as list
@@ -183,13 +189,16 @@ netcdf basic {
     (dimension_declarations
       (dimension
         name: (identifier)
-        size: (dimension_size))
+        size: (dimension_size
+          (const_positive_int)))
       (dimension
         name: (identifier)
-        size: (dimension_size))
+        size: (dimension_size
+          (const_positive_int)))
       (dimension
         name: (identifier)
-        size: (dimension_size)))))
+        size: (dimension_size
+          (nc_unlimited))))))
 
 ===================================================
 Dataset with invalid dimensions list missing comma
@@ -221,14 +230,17 @@ netcdf basic {
     (dimension_declarations
       (dimension
         name: (identifier)
-        size: (dimension_size))
+        size: (dimension_size
+          (const_positive_int)))
       (dimension
         name: (identifier)
-        size: (dimension_size)))
+        size: (dimension_size
+          (const_positive_int))))
     (dimension_declarations
       (dimension
         name: (identifier)
-        size: (dimension_size)))))
+        size: (dimension_size
+          (nc_unlimited))))))
 
 ========================================
 Dataset with invalid negative dimension

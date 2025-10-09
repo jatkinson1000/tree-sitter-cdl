@@ -148,7 +148,8 @@ dimensions:
     (dimension_declarations
       (dimension
         name: (identifier)
-        size: (dimension_size)))))
+          size: (dimension_size
+            (const_positive_int))))))
 
 ===========================
 Identifier Valid with UTF8
@@ -167,7 +168,8 @@ dimensions:
     (dimension_declarations
       (dimension
         name: (identifier)
-        size: (dimension_size)))))
+          size: (dimension_size
+            (const_positive_int))))))
 
 ==============================================
 Identifier Valid starting with escaped number
@@ -186,7 +188,8 @@ dimensions:
     (dimension_declarations
       (dimension
         name: (identifier)
-        size: (dimension_size)))))
+          size: (dimension_size
+            (const_positive_int))))))
 
 ==================================================
 Identifier Invalid starting with unescaped number
@@ -217,7 +220,8 @@ dimensions:
     (dimension_declarations
       (dimension
         name: (identifier)
-        size: (dimension_size)))))
+          size: (dimension_size
+            (const_positive_int))))))
 
 =====================================
 Identifier Valid starting underscore
@@ -236,7 +240,8 @@ dimensions:
     (dimension_declarations
       (dimension
         name: (identifier)
-        size: (dimension_size)))))
+          size: (dimension_size
+            (const_positive_int))))))
 
 ====================================
 Identifier Invalid containing space
@@ -279,7 +284,8 @@ dimensions:
     (dimension_declarations
       (dimension
         name: (identifier)
-        size: (dimension_size)))))
+          size: (dimension_size
+            (const_positive_int))))))
 
 ================================
 Identifier Invalid containing =
@@ -323,7 +329,8 @@ dimensions:
     (dimension_declarations
       (dimension
         name: (identifier)
-        size: (dimension_size)))))
+          size: (dimension_size
+            (const_positive_int))))))
 
 ===================================================
 Identifier Invalid starting with escaped special [

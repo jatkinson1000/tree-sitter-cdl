@@ -7,11 +7,9 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
-// Constants
-const decimalDigits = /\d+/;
+// Constants for use in constructing identifiers
 const letterOrUnderscore = /[a-zA-Z_]/;
 const ncSpecialChars = /[a-zA-Z0-9_.@+-]/; // Original set - do not need to be escaped
-const ncUnlimited = /unlimited|UNLIMITED/;
 const utf8Chars = /[\u0080-\uFFFF]/;
 const escapedDigits = seq('\\', /\d+/);
 const escapedChars = seq('\\', /[ !"#$%&'()*,:;<=>?\[\\\]^`{|}~]/);
@@ -149,7 +147,7 @@ module.exports = grammar({
       field('size', $.dimension_size),
     ),
 
-    dimension_size: $ => choice(decimalDigits, ncUnlimited),
+    dimension_size: $ => choice($.const_positive_int, $.nc_unlimited),
 
 
     // Variables
@@ -330,6 +328,8 @@ module.exports = grammar({
 
     fill_value: $ => token(/_/),
 
+    nc_unlimited: $ => token(/unlimited|UNLIMITED/),
+
     // Statements should end in a ;
     statement: $ => seq($.identifier, ';'),
 
@@ -341,6 +341,8 @@ module.exports = grammar({
       /\d+/,
       optional(/[uU]/),
     ),
+
+    const_positive_int: $ => token(seq(/\d+/, optional(/[uU]/))),
 
   },
 

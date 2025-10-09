@@ -246,7 +246,21 @@
   {
     "type": "dimension_size",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "const_positive_int",
+          "named": true
+        },
+        {
+          "type": "nc_unlimited",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "dimension_spec",
@@ -635,11 +649,11 @@
   },
   {
     "type": "byte",
-    "named": true
+    "named": false
   },
   {
     "type": "byte",
-    "named": false
+    "named": true
   },
   {
     "type": "char",
@@ -657,6 +671,10 @@
   {
     "type": "compound",
     "named": false
+  },
+  {
+    "type": "const_positive_int",
+    "named": true
   },
   {
     "type": "data:",
@@ -711,6 +729,10 @@
     "named": false
   },
   {
+    "type": "nc_unlimited",
+    "named": true
+  },
+  {
     "type": "netcdf",
     "named": false
   },
@@ -728,11 +750,11 @@
   },
   {
     "type": "string",
-    "named": false
+    "named": true
   },
   {
     "type": "string",
-    "named": true
+    "named": false
   },
   {
     "type": "types:",
