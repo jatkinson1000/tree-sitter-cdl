@@ -188,6 +188,21 @@
     }
   },
   {
+    "type": "derived_type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "dimension",
     "named": true,
     "fields": {
@@ -411,7 +426,7 @@
       "required": true,
       "types": [
         {
-          "type": "identifier",
+          "type": "derived_type",
           "named": true
         },
         {
@@ -618,11 +633,11 @@
   },
   {
     "type": "char",
-    "named": true
+    "named": false
   },
   {
     "type": "char",
-    "named": false
+    "named": true
   },
   {
     "type": "comment",
@@ -703,11 +718,11 @@
   },
   {
     "type": "string",
-    "named": true
+    "named": false
   },
   {
     "type": "string",
-    "named": false
+    "named": true
   },
   {
     "type": "types:",

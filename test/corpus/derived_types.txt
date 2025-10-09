@@ -322,7 +322,8 @@ netcdf basic {
   (types_section
     (vlen_type
       type: (typeref
-        (identifier))
+        (derived_type
+          (identifier)))
       name: (identifier))))
 
 ================================================
@@ -360,7 +361,8 @@ netcdf basic {
   (types_section
     (vlen_type
       type: (typeref
-        (identifier))
+        (derived_type
+          (identifier)))
       name: (identifier))))
 
 ================================================
@@ -379,7 +381,8 @@ netcdf basic {
   (types_section
     (vlen_type
       type: (typeref
-        (identifier))
+        (derived_type
+          (identifier)))
       name: (identifier))))
 
 ================================================
@@ -485,6 +488,64 @@ netcdf basic {
           name: (identifier))))))
 
 ================================================
+compound type with dimensions
+================================================
+
+netcdf basic {
+    types:
+        compound my_compound {int my_array(10);};
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (compound_type
+      name: (identifier)
+      (compound_field
+        type: (typeref
+          (type))
+        (fieldspec
+          name: (identifier)
+          dimensions: (field_dimensions_spec))))))
+
+================================================
+compound type with UINT dimensions
+================================================
+
+netcdf basic {
+    types:
+        compound my_compound {int my_array(10, 5U);};
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (compound_type
+      name: (identifier)
+      (compound_field
+        type: (typeref
+          (type))
+        (fieldspec
+          name: (identifier)
+          dimensions: (field_dimensions_spec))))))
+
+================================================
+compound type invalid empty dimensions
+:error
+================================================
+
+netcdf basic {
+    types:
+        compound my_compound {int my_array( );};
+}
+
+---
+
+================================================
 compound type multiple values
 ================================================
 
@@ -544,7 +605,8 @@ netcdf basic {
           name: (identifier)))
       (compound_field
         type: (typeref
-          (identifier))
+          (derived_type
+            (identifier)))
         (fieldspec
           name: (identifier))))))
 
@@ -580,7 +642,8 @@ netcdf basic {
           name: (identifier)))
       (compound_field
         type: (typeref
-          (identifier))
+          (derived_type
+            (identifier)))
         (fieldspec
           name: (identifier))))))
 

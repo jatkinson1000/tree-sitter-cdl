@@ -246,10 +246,12 @@ module.exports = grammar({
       'char', 'byte', 'short', 'int', 'long', 'float', 'real', 'double', 'ubyte', 'ushort', 'uint', 'int64', 'uint64', 'string',
     ),
 
+    derived_type: $ => $.identifier,
+
     // typeref handles the fact that types can declare as a primitive type, or be a user-defined type
     typeref: $ => choice(
       $.type,
-      $.identifier,
+      $.derived_type,
     ),
 
 
