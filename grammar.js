@@ -56,6 +56,7 @@ module.exports = grammar({
       optional($.types_section),
       optional($.dimensions_section),
       optional($.variables_section),
+      optional($.data_section),
       '}',
     ),
 
@@ -193,6 +194,22 @@ module.exports = grammar({
     ),
 
 
+    // Data
+    data_section: $ => seq(
+      'data:',
+      repeat(
+        $.data_declaration,
+      ),
+    ),
+
+    data_declaration: $ => seq(
+      field('variable', $.identifier),
+      '=',
+      field('value', commaSep(choice($.value, $.fill_value))),
+      ';',
+    ),
+
+
     // Dataset ID can be any character except '{'
     // Note also that the CDL dataset ID is irrelevant as generated file is named based
     // on filename, not dataset ID. Ideally they should match as occurs with ncdump.
@@ -308,6 +325,8 @@ module.exports = grammar({
         '"NIL"', // Special constant "NIL"
       ),
     ),
+
+    fill_value: $ => token(/_/),
 
     // Statements should end in a ;
     statement: $ => seq($.identifier, ';'),

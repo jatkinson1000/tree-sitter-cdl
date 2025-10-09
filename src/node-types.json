@@ -107,6 +107,55 @@
     "fields": {}
   },
   {
+    "type": "data_declaration",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          },
+          {
+            "type": "fill_value",
+            "named": true
+          },
+          {
+            "type": "value",
+            "named": true
+          }
+        ]
+      },
+      "variable": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "data_section",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "data_declaration",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "dataset",
     "named": true,
     "root": true,
@@ -115,6 +164,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "data_section",
+          "named": true
+        },
         {
           "type": "dataset_id",
           "named": true
@@ -557,11 +610,11 @@
   },
   {
     "type": "byte",
-    "named": false
+    "named": true
   },
   {
     "type": "byte",
-    "named": true
+    "named": false
   },
   {
     "type": "char",
@@ -581,6 +634,10 @@
     "named": false
   },
   {
+    "type": "data:",
+    "named": false
+  },
+  {
     "type": "dataset_id",
     "named": true
   },
@@ -595,6 +652,10 @@
   {
     "type": "enum",
     "named": false
+  },
+  {
+    "type": "fill_value",
+    "named": true
   },
   {
     "type": "float",

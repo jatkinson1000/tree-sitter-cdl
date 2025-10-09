@@ -1,0 +1,146 @@
+=============================
+Dataset with empty data
+=============================
+
+netcdf basic {
+    data:
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (data_section))
+
+=============================
+Dataset with scalar int value
+=============================
+
+netcdf basic {
+    data:
+        a = 1 ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+    (data_section
+      (data_declaration
+        variable: (identifier)
+        value: (value
+          (integer)))))
+
+=============================
+Dataset with scalar float value
+=============================
+
+netcdf basic {
+    data:
+        a = 1.0 ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+    (data_section
+      (data_declaration
+        variable: (identifier)
+        value: (value
+          (float)))))
+
+=============================
+Dataset with scalar char value
+=============================
+
+netcdf basic {
+    data:
+        a = 'a' ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+    (data_section
+      (data_declaration
+        variable: (identifier)
+        value: (value
+          (char)))))
+
+=============================
+Dataset with scalar string value
+=============================
+
+netcdf basic {
+    data:
+        a = "Hello there!" ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+    (data_section
+      (data_declaration
+        variable: (identifier)
+        value: (value
+          (string)))))
+
+=============================
+Dataset with scalar fill value
+=============================
+
+netcdf basic {
+    data:
+        a = _ ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+    (data_section
+      (data_declaration
+        variable: (identifier)
+        value: (fill_value))))
+
+=============================
+Dataset with multiple values
+=============================
+
+netcdf basic {
+    data:
+        a = 1 , 2, 3, 4, 5;
+}
+
+---
+
+(dataset
+  (dataset_id)
+    (data_section
+      (data_declaration
+        variable: (identifier)
+        value: (value
+          (integer))
+        value: (value
+          (integer))
+        value: (value
+          (integer))
+        value: (value
+          (integer))
+        value: (value
+          (integer)))))
+
+=============================
+Dataset Invalid missing comma
+:error
+=============================
+
+netcdf basic {
+    data:
+        a = 1, 2, 3 4, 5;
+}
+
+---
