@@ -126,7 +126,7 @@ module.exports = grammar({
 
     field_dimensions_spec: $ => seq(
       '(',
-      commaSep(/\d+[uU]?/),
+      commaSep($.const_int),
       ')',
     ),
 

@@ -424,8 +424,8 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "PATTERN",
-              "value": "\\d+[uU]?"
+              "type": "SYMBOL",
+              "name": "const_int"
             },
             {
               "type": "REPEAT",
@@ -437,8 +437,8 @@
                     "value": ","
                   },
                   {
-                    "type": "PATTERN",
-                    "value": "\\d+[uU]?"
+                    "type": "SYMBOL",
+                    "name": "const_int"
                   }
                 ]
               }

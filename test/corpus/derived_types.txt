@@ -508,7 +508,8 @@ netcdf basic {
           (type))
         (fieldspec
           name: (identifier)
-          dimensions: (field_dimensions_spec))))))
+          dimensions: (field_dimensions_spec
+            (const_int)))))))
 
 ================================================
 compound type with UINT dimensions
@@ -531,7 +532,9 @@ netcdf basic {
           (type))
         (fieldspec
           name: (identifier)
-          dimensions: (field_dimensions_spec))))))
+          dimensions: (field_dimensions_spec
+            (const_int)
+            (const_int)))))))
 
 ================================================
 compound type invalid empty dimensions

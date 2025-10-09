@@ -358,7 +358,17 @@
   {
     "type": "field_dimensions_spec",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_int",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "fieldspec",
