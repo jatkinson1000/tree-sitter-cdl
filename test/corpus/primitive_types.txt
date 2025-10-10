@@ -26,8 +26,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 =========================================================
 negative integer attribute
@@ -57,8 +58,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 =========================================================
 unsigned u integer attribute
@@ -88,8 +90,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 =========================================================
 unsigned U integer attribute
@@ -119,8 +122,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 =========================================================
 short 16bit integer attribute
@@ -150,8 +154,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 =========================================================
 short S 16bit integer attribute
@@ -181,8 +186,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 =========================================================
 long 32bit integer attribute
@@ -212,8 +218,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 =========================================================
 long L 32bit integer attribute
@@ -243,8 +250,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 =========================================================
 long long 64bit integer attribute
@@ -274,8 +282,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 =========================================================
 long long LL 64bit integer attribute
@@ -305,8 +314,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 =========================================================
 unsigned long long 64bit integer attribute
@@ -336,8 +346,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 =========================================================
 unsigned long long ULL 64bit integer attribute
@@ -367,8 +378,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 =========================================================
 unsigned uLL long long 64bit integer attribute
@@ -398,8 +410,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 =========================================================
 long long unsigned 64bit integer attribute
@@ -460,8 +473,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 =========================================================
 unsigned Octal attribute
@@ -491,8 +505,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 =========================================================
 long long 64bit Octal attribute
@@ -522,8 +537,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 =========================================================
 Hexadecimal attribute
@@ -553,8 +569,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 =========================================================
 unsigned Hexadecimal attribute
@@ -584,8 +601,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 =========================================================
 long long 64bit Hexadecimal attribute
@@ -615,8 +633,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 ================================================
 float attribute
@@ -646,8 +665,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (float)))))
+      (data_list
+        (value
+          (float))))))
 
 ================================================
 float attribute negative
@@ -677,8 +697,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (float)))))
+      (data_list
+        (value
+          (float))))))
 
 ================================================
 float attribute characteristic and point
@@ -708,8 +729,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (float)))))
+      (data_list
+        (value
+          (float))))))
 
 ================================================
 float attribute point and mantissa
@@ -739,8 +761,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (float)))))
+      (data_list
+        (value
+          (float))))))
 
 ================================================
 float attribute scientific notation
@@ -770,8 +793,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (float)))))
+      (data_list
+        (value
+          (float))))))
 
 ================================================
 float attribute scientific notation upper E
@@ -801,8 +825,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (float)))))
+      (data_list
+        (value
+          (float))))))
 
 ================================================
 float attribute scientific notation negative exponent
@@ -832,8 +857,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (float)))))
+      (data_list
+        (value
+          (float))))))
 
 ================================================
 float attribute scientific notation negative exponent
@@ -863,8 +889,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (float)))))
+      (data_list
+        (value
+          (float))))))
 
 ================================================
 float attribute scientific notation characteristic point
@@ -894,8 +921,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (float)))))
+      (data_list
+        (value
+          (float))))))
 
 ================================================
 float attribute scientific notation characteristic
@@ -925,8 +953,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (float)))))
+      (data_list
+        (value
+          (float))))))
 
 ================================================
 float attribute scientific notation mantissa
@@ -956,8 +985,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (float)))))
+      (data_list
+        (value
+          (float))))))
 
 ================================================
 float attribute F suffix
@@ -987,8 +1017,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (float)))))
+      (data_list
+        (value
+          (float))))))
 
 ================================================
 float attribute f suffix
@@ -1018,8 +1049,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (float)))))
+      (data_list
+        (value
+          (float))))))
 
 ================================================
 float attribute D suffix
@@ -1049,8 +1081,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (float)))))
+      (data_list
+        (value
+          (float))))))
 
 ================================================
 float attribute d suffix
@@ -1080,8 +1113,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (float)))))
+      (data_list
+        (value
+          (float))))))
 
 ================================================
 float attribute L suffix
@@ -1111,8 +1145,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (float)))))
+      (data_list
+        (value
+          (float))))))
 
 ================================================
 float attribute l suffix
@@ -1142,8 +1177,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (float)))))
+      (data_list
+        (value
+          (float))))))
 
 ================================================
 float attribute scientific notation suffix
@@ -1173,8 +1209,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (float)))))
+      (data_list
+        (value
+          (float))))))
 
 ================================================
 float attribute Invalid space after point
@@ -1323,8 +1360,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (byte)))))
+      (data_list
+        (value
+          (byte))))))
 
 ================================================
 byte attribute B
@@ -1354,8 +1392,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (byte)))))
+      (data_list
+        (value
+          (byte))))))
 
 ================================================
 byte attribute 0
@@ -1385,8 +1424,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (byte)))))
+      (data_list
+        (value
+          (byte))))))
 
 ================================================
 byte attribute 255
@@ -1416,8 +1456,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (byte)))))
+      (data_list
+        (value
+          (byte))))))
 
 ================================================
 byte attribute invalid negative
@@ -1498,8 +1539,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (char)))))
+      (data_list
+        (value
+          (char))))))
 
 ================================================
 char attribute ~
@@ -1529,8 +1571,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (char)))))
+      (data_list
+        (value
+          (char))))))
 
 ================================================
 char attribute escaped \n
@@ -1560,8 +1603,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (char)))))
+      (data_list
+        (value
+          (char))))))
 
 ================================================
 char attribute escaped \t
@@ -1591,8 +1635,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (char)))))
+      (data_list
+        (value
+          (char))))))
 
 ================================================
 char attribute non-standard C escape
@@ -1623,8 +1668,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (char)))))
+      (data_list
+        (value
+          (char))))))
 
 ================================================
 char attribute Octal
@@ -1654,8 +1700,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (char)))))
+      (data_list
+        (value
+          (char))))))
 
 ================================================
 char attribute Hexadecimal
@@ -1685,8 +1732,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (char)))))
+      (data_list
+        (value
+          (char))))))
 
 ================================================
 char attribute undefined allowed
@@ -1716,8 +1764,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (char)))))
+      (data_list
+        (value
+          (char))))))
 
 ================================================
 char attribute Invalid multiple
@@ -1798,8 +1847,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (string)))))
+      (data_list
+        (value
+          (string))))))
 
 ================================================
 string attribute single
@@ -1829,8 +1879,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (string)))))
+      (data_list
+        (value
+          (string))))))
 
 ================================================
 string attribute escape
@@ -1860,8 +1911,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (string)))))
+      (data_list
+        (value
+          (string))))))
 
 ================================================
 string attribute space
@@ -1891,8 +1943,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (string)))))
+      (data_list
+        (value
+          (string))))))
 
 ================================================
 string attribute symbol
@@ -1922,8 +1975,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (string)))))
+      (data_list
+        (value
+          (string))))))
 
 ================================================
 string attribute Octal
@@ -1953,8 +2007,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (string)))))
+      (data_list
+        (value
+          (string))))))
 
 ================================================
 string attribute inline UTF8
@@ -1984,8 +2039,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (string)))))
+      (data_list
+        (value
+          (string))))))
 
 ================================================
 string attribute Special "NIL"
@@ -2015,8 +2071,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (string)))))
+      (data_list
+        (value
+          (string))))))
 
 ================================================
 string attribute Invalid no closing quote

@@ -25,11 +25,12 @@ netcdf basic {
 
 (dataset
   (dataset_id)
-    (data_section
-      (data_declaration
-        variable: (identifier)
-        value: (value
-          (integer)))))
+  (data_section
+    (data_declaration
+      variable: (identifier)
+      (data_list
+        (value
+          (integer))))))
 
 =============================
 Dataset with scalar float value
@@ -44,11 +45,12 @@ netcdf basic {
 
 (dataset
   (dataset_id)
-    (data_section
-      (data_declaration
-        variable: (identifier)
-        value: (value
-          (float)))))
+  (data_section
+    (data_declaration
+      variable: (identifier)
+      (data_list
+        (value
+          (float))))))
 
 =============================
 Dataset with scalar char value
@@ -63,11 +65,12 @@ netcdf basic {
 
 (dataset
   (dataset_id)
-    (data_section
-      (data_declaration
-        variable: (identifier)
-        value: (value
-          (char)))))
+  (data_section
+    (data_declaration
+      variable: (identifier)
+      (data_list
+        (value
+          (char))))))
 
 =============================
 Dataset with scalar string value
@@ -82,11 +85,12 @@ netcdf basic {
 
 (dataset
   (dataset_id)
-    (data_section
-      (data_declaration
-        variable: (identifier)
-        value: (value
-          (string)))))
+  (data_section
+    (data_declaration
+      variable: (identifier)
+      (data_list
+        (value
+          (string))))))
 
 =============================
 Dataset with scalar fill value
@@ -101,10 +105,11 @@ netcdf basic {
 
 (dataset
   (dataset_id)
-    (data_section
-      (data_declaration
-        variable: (identifier)
-        value: (fill_value))))
+  (data_section
+    (data_declaration
+      variable: (identifier)
+      (data_list
+        (fill_value)))))
 
 =============================
 Dataset with multiple values
@@ -119,19 +124,20 @@ netcdf basic {
 
 (dataset
   (dataset_id)
-    (data_section
-      (data_declaration
-        variable: (identifier)
-        value: (value
+  (data_section
+    (data_declaration
+      variable: (identifier)
+      (data_list
+        (value
           (integer))
-        value: (value
+        (value
           (integer))
-        value: (value
+        (value
           (integer))
-        value: (value
+        (value
           (integer))
-        value: (value
-          (integer)))))
+        (value
+          (integer))))))
 
 =============================
 Dataset Invalid missing comma
@@ -144,3 +150,58 @@ netcdf basic {
 }
 
 ---
+
+
+
+=============================
+Dataset with datalist
+=============================
+
+netcdf basic {
+    data:
+        my_vlen = {1, 2, 3};
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (data_section
+    (data_declaration
+      (identifier)
+      (data_list
+        (data_list
+          (value
+            (integer))
+          (value
+            (integer))
+          (value
+            (integer)))))))
+
+=============================
+Dataset with nested datalist
+=============================
+
+netcdf basic {
+    data:
+        my_compound = {1, {2.1, 2.2}, 3};
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (data_section
+    (data_declaration
+      (identifier)
+      (data_list
+        (data_list
+          (value
+            (integer))
+          (data_list
+            (value
+              (float))
+            (value
+              (float)))
+          (value
+            (integer)))))))

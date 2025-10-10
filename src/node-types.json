@@ -23,20 +23,6 @@
           }
         ]
       },
-      "value": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": ",",
-            "named": false
-          },
-          {
-            "type": "value",
-            "named": true
-          }
-        ]
-      },
       "variable": {
         "multiple": false,
         "required": false,
@@ -47,6 +33,16 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "data_list",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -110,24 +106,6 @@
     "type": "data_declaration",
     "named": true,
     "fields": {
-      "value": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": ",",
-            "named": false
-          },
-          {
-            "type": "fill_value",
-            "named": true
-          },
-          {
-            "type": "value",
-            "named": true
-          }
-        ]
-      },
       "variable": {
         "multiple": false,
         "required": true,
@@ -138,6 +116,39 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "data_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "data_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "data_list",
+          "named": true
+        },
+        {
+          "type": "fill_value",
+          "named": true
+        },
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -665,11 +676,11 @@
   },
   {
     "type": "char",
-    "named": false
+    "named": true
   },
   {
     "type": "char",
-    "named": true
+    "named": false
   },
   {
     "type": "comment",

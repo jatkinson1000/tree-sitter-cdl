@@ -23,8 +23,9 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 ===============================================
 single variable attribute multiple values
@@ -51,10 +52,110 @@ netcdf basic {
         (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (float))
-      value: (value
-        (float)))))
+      (data_list
+        (value
+          (float))
+        (value
+          (float))))))
+
+===============================================
+single variable (char) attribute no values
+===============================================
+
+netcdf basic {
+    variables:
+        float a ;
+        char a:no_char = ;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (typeref
+        (type))
+      (variable
+        name: (identifier)))
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier))))
+
+===============================================
+single variable attribute datalist
+===============================================
+
+netcdf basic {
+    variables:
+        float a ;
+        my_type a:cmpd = {1, 2.0, "Three"};
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (typeref
+        (type))
+      (variable
+        name: (identifier)))
+    (attribute
+      type: (typeref
+        (derived_type
+          (identifier)))
+      variable: (identifier)
+      name: (identifier)
+      (data_list
+        (data_list
+          (value
+            (integer))
+          (value
+            (float))
+          (value
+            (string)))))))
+
+===============================================
+single variable attribute nested datalist
+===============================================
+
+netcdf basic {
+    variables:
+        float a ;
+        my_type a:cmpd = {1, {2.1, 2.2}, "Three"};
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (typeref
+        (type))
+      (variable
+        name: (identifier)))
+    (attribute
+      type: (typeref
+        (derived_type
+          (identifier)))
+      variable: (identifier)
+      name: (identifier)
+      (data_list
+        (data_list
+          (value
+            (integer))
+          (data_list
+            (value
+              (float))
+            (value
+              (float)))
+          (value
+            (string)))))))
 
 ===============================================
 single untyped variable attribute -- known ambiguity treated as typed global attribute
@@ -81,8 +182,9 @@ netcdf basic {
         (derived_type
           (identifier)))
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 ===============================================
 single primitive typed global attribute in variables
@@ -102,8 +204,9 @@ netcdf basic {
       type: (typeref
         (type))
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 ===============================================
 single derived typed global attribute in variables
@@ -124,8 +227,9 @@ netcdf basic {
         (derived_type
           (identifier)))
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 ===============================================
 single global attribute (untyped) in variables
@@ -143,8 +247,9 @@ netcdf basic {
   (variables_section
     (attribute
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 ===============================================
 single primitive typed global attribute in dimensions
@@ -170,8 +275,9 @@ netcdf basic {
       type: (typeref
         (type))
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 ===============================================
 single derived typed global attribute in dimensions
@@ -198,8 +304,9 @@ netcdf basic {
         (derived_type
           (identifier)))
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
 
 ===============================================
 single global attribute (untyped) in dimensions
@@ -223,5 +330,6 @@ netcdf basic {
           (const_positive_int))))
     (attribute
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))

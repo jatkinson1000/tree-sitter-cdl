@@ -195,7 +195,7 @@ module.exports = grammar({
       ':',
       field('name', $.identifier),
       '=',
-      field('value', commaSep($.value)),
+      optional($.data_list), // datalist can be empty for char datatypes
       ';',
     )),
 
@@ -211,8 +211,18 @@ module.exports = grammar({
     data_declaration: $ => seq(
       field('variable', $.identifier),
       '=',
-      field('value', commaSep(choice($.value, $.fill_value))),
+      optional($.data_list), // datalist can be empty for char datatypes
       ';',
+    ),
+
+    data_list: $ => choice(
+      commaSep(
+        choice(
+          $.value,
+          $.fill_value,
+          seq('{', $.data_list, '}'),
+        ),
+      ),
     ),
 
 
