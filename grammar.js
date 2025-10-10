@@ -35,6 +35,10 @@ const float_suffix = choice(
   ),
 );
 
+const PREC = {
+  derived_type: 1,
+  attribute: 0,
+};
 
 module.exports = grammar({
   name: 'cdl',
@@ -163,7 +167,7 @@ module.exports = grammar({
     ),
 
     variable_declarations: $ => seq(
-      field('type', $.type),
+      field('type', $.typeref),
       commaSep($.variable),
       ';',
     ),
@@ -181,15 +185,15 @@ module.exports = grammar({
 
 
     // Attributes
-    attribute: $ => seq(
-      optional(field('type', $.type)),
+    attribute: $ => prec(PREC.attribute, seq(
+      optional(field('type', $.typeref)),
       optional(field('variable', $.identifier)),
       ':',
       field('name', $.identifier),
       '=',
       field('value', commaSep($.value)),
       ';',
-    ),
+    )),
 
 
     // Data
@@ -244,7 +248,7 @@ module.exports = grammar({
       'char', 'byte', 'short', 'int', 'long', 'float', 'real', 'double', 'ubyte', 'ushort', 'uint', 'int64', 'uint64', 'string',
     ),
 
-    derived_type: $ => $.identifier,
+    derived_type: $ => prec(PREC.derived_type, $.identifier),
 
     // typeref handles the fact that types can declare as a primitive type, or be a user-defined type
     typeref: $ => choice(

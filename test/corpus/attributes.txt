@@ -14,18 +14,50 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-        (attribute
-          type: (type)
-          variable: (identifier)
-          name: (identifier)
-          value: (value
-            (integer)))))
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 ===============================================
-single untyped attribute
+single attribute multiple values
+===============================================
+
+netcdf basic {
+    variables:
+        float a ;
+        float a:range = 1.0, 5.0;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (typeref
+        (type))
+      (variable
+        name: (identifier)))
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (float))
+      value: (value
+        (float)))))
+
+===============================================
+single untyped variable attribute -- known ambiguity treated as typed global attribute
 ===============================================
 
 netcdf basic {
@@ -40,23 +72,25 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-        (attribute
-          variable: (identifier)
-          name: (identifier)
-          value: (value
-            (integer)))))
+    (attribute
+      type: (typeref
+        (derived_type
+          (identifier)))
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 ===============================================
-single global attribute (typed)
+single primitive typed global attribute
 ===============================================
 
 netcdf basic {
     variables:
-        float a ;
-        float :attr = 1;
+        int :attr = 1;
 }
 
 ---
@@ -64,15 +98,34 @@ netcdf basic {
 (dataset
   (dataset_id)
   (variables_section
-    (variable_declarations
-      type: (type)
-      (variable
-        name: (identifier)))
-        (attribute
-          type: (type)
-          name: (identifier)
-          value: (value
-            (integer)))))
+    (attribute
+      type: (typeref
+         (type))
+      name: (identifier)
+      value: (value
+        (integer)))))
+
+===============================================
+single derived typed global attribute
+===============================================
+
+netcdf basic {
+    variables:
+        my_type :asdf = 12;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (attribute
+      type: (typeref
+        (derived_type
+          (identifier)))
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 ===============================================
 single global attribute (untyped)
@@ -80,7 +133,6 @@ single global attribute (untyped)
 
 netcdf basic {
     variables:
-        float a ;
         :attr = 1;
 }
 
@@ -89,11 +141,7 @@ netcdf basic {
 (dataset
   (dataset_id)
   (variables_section
-    (variable_declarations
-      type: (type)
-      (variable
-        name: (identifier)))
-        (attribute
-          name: (identifier)
-          value: (value
-            (integer)))))
+    (attribute
+      name: (identifier)
+      value: (value
+        (integer)))))

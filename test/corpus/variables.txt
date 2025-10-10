@@ -23,6 +23,8 @@ netcdf basic {
 
 ---
 
+
+
 ===========================================
 Dataset with invalid variables declaration
 :error
@@ -33,6 +35,8 @@ netcdf basic {
 }
 
 ---
+
+
 
 ===========================================
 Dataset with invalid variables declaration
@@ -45,6 +49,8 @@ netcdf basic {
 
 ---
 
+
+
 ===========================================
 Dataset with invalid variables declaration
 :error
@@ -55,6 +61,8 @@ netcdf basic {
 }
 
 ---
+
+
 
 ============================================
 Dataset with single variable, no dimensions
@@ -71,7 +79,8 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))))
 
@@ -90,7 +99,8 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)
         dimensions: (dimension_spec
@@ -111,7 +121,8 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)
         dimensions: (dimension_spec
@@ -119,8 +130,7 @@ netcdf basic {
           (identifier))))))
 
 ===================================
-Dataset with invalid variable type
-:error
+Dataset with derived variable type
 ===================================
 
 netcdf basic {
@@ -129,6 +139,16 @@ netcdf basic {
 }
 
 ---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      (typeref
+        (derived_type
+          (identifier)))
+      (variable
+        (identifier)))))
 
 ===================================
 Dataset with invalid variable name
@@ -142,6 +162,8 @@ netcdf basic {
 
 ---
 
+
+
 ================================================================
 Dataset with single variable and invalid variables declaration
 :error
@@ -154,6 +176,8 @@ netcdf basic {
 
 ---
 
+
+
 ===============================================================
 Dataset with single variable and invalid variables declaration
 :error
@@ -165,6 +189,8 @@ netcdf basic {
 }
 
 ---
+
+
 
 ===================================
 Dataset with missing variable type
@@ -178,6 +204,8 @@ netcdf basic {
 
 ---
 
+
+
 ==============================
 Dataset with missing variable
 :error
@@ -189,6 +217,8 @@ netcdf basic {
 }
 
 ---
+
+
 
 =========================================
 Dataset with multiple variables as list
@@ -203,22 +233,23 @@ netcdf basic {
 
 (dataset
   (dataset_id)
-    (variables_section
-      (variable_declarations
-        type: (type)
-        (variable
-          name: (identifier))
-        (variable
-          name: (identifier)
-          dimensions: (dimension_spec
-            (identifier)
-            (identifier)))
-        (variable
-          name: (identifier)
-          dimensions: (dimension_spec
-            (identifier)
-            (identifier)
-            (identifier))))))
+  (variables_section
+    (variable_declarations
+      type: (typeref
+        (type))
+      (variable
+        name: (identifier))
+      (variable
+        name: (identifier)
+        dimensions: (dimension_spec
+          (identifier)
+          (identifier)))
+      (variable
+        name: (identifier)
+        dimensions: (dimension_spec
+          (identifier)
+          (identifier)
+          (identifier))))))
 
 ===================================================
 Dataset with invalid variable list missing comma
@@ -231,6 +262,8 @@ netcdf basic {
 }
 
 ---
+
+
 
 =====================================================
 Dataset with multiple dimensions list and individual
@@ -248,7 +281,8 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier))
       (variable
@@ -257,7 +291,8 @@ netcdf basic {
           (identifier)
           (identifier))))
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)
         dimensions: (dimension_spec
@@ -277,6 +312,8 @@ netcdf basic {
 
 ---
 
+
+
 =====================================================
 Dataset with variable with invalid numeric dimension
 :error
@@ -288,3 +325,5 @@ netcdf basic {
 }
 
 ---
+
+

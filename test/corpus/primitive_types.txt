@@ -16,16 +16,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (integer)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 =========================================================
 negative integer attribute
@@ -45,16 +47,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (integer)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 =========================================================
 unsigned u integer attribute
@@ -74,16 +78,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (integer)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 =========================================================
 unsigned U integer attribute
@@ -103,16 +109,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (integer)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 =========================================================
 short 16bit integer attribute
@@ -132,16 +140,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (integer)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 =========================================================
 short S 16bit integer attribute
@@ -161,16 +171,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (integer)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 =========================================================
 long 32bit integer attribute
@@ -190,16 +202,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (integer)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 =========================================================
 long L 32bit integer attribute
@@ -219,16 +233,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (integer)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 =========================================================
 long long 64bit integer attribute
@@ -248,16 +264,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (integer)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 =========================================================
 long long LL 64bit integer attribute
@@ -277,16 +295,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (integer)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 =========================================================
 unsigned long long 64bit integer attribute
@@ -306,16 +326,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (integer)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 =========================================================
 unsigned long long ULL 64bit integer attribute
@@ -335,16 +357,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (integer)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 =========================================================
 unsigned uLL long long 64bit integer attribute
@@ -364,16 +388,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (integer)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 =========================================================
 long long unsigned 64bit integer attribute
@@ -398,13 +424,13 @@ netcdf basic {
       type: (type)
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (integer)))))
+    (comment)
+    (attribute
+      type: (type)
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 =========================================================
 Octal attribute
@@ -424,16 +450,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (integer)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 =========================================================
 unsigned Octal attribute
@@ -453,16 +481,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (integer)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 =========================================================
 long long 64bit Octal attribute
@@ -482,16 +512,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (integer)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 =========================================================
 Hexadecimal attribute
@@ -511,16 +543,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (integer)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 =========================================================
 unsigned Hexadecimal attribute
@@ -540,16 +574,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (integer)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 =========================================================
 long long 64bit Hexadecimal attribute
@@ -569,16 +605,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (integer)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (integer)))))
 
 ================================================
 float attribute
@@ -598,16 +636,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (float)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (float)))))
 
 ================================================
 float attribute negative
@@ -627,16 +667,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (float)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (float)))))
 
 ================================================
 float attribute characteristic and point
@@ -656,16 +698,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (float)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (float)))))
 
 ================================================
 float attribute point and mantissa
@@ -685,16 +729,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (float)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (float)))))
 
 ================================================
 float attribute scientific notation
@@ -714,16 +760,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (float)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (float)))))
 
 ================================================
 float attribute scientific notation upper E
@@ -743,16 +791,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (float)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (float)))))
 
 ================================================
 float attribute scientific notation negative exponent
@@ -772,16 +822,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (float)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (float)))))
 
 ================================================
 float attribute scientific notation negative exponent
@@ -801,16 +853,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (float)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (float)))))
 
 ================================================
 float attribute scientific notation characteristic point
@@ -830,16 +884,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (float)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (float)))))
 
 ================================================
 float attribute scientific notation characteristic
@@ -859,16 +915,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (float)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (float)))))
 
 ================================================
 float attribute scientific notation mantissa
@@ -888,16 +946,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (float)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (float)))))
 
 ================================================
 float attribute F suffix
@@ -917,16 +977,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (float)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (float)))))
 
 ================================================
 float attribute f suffix
@@ -946,16 +1008,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (float)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (float)))))
 
 ================================================
 float attribute D suffix
@@ -975,16 +1039,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (float)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (float)))))
 
 ================================================
 float attribute d suffix
@@ -1004,16 +1070,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (float)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (float)))))
 
 ================================================
 float attribute L suffix
@@ -1033,16 +1101,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (float)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (float)))))
 
 ================================================
 float attribute l suffix
@@ -1062,16 +1132,19 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (float)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (float)))))
+
 ================================================
 float attribute scientific notation suffix
 ================================================
@@ -1090,17 +1163,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (float)))))
-
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (float)))))
 
 ================================================
 float attribute Invalid space after point
@@ -1117,6 +1191,8 @@ netcdf basic {
 
 ---
 
+
+
 ================================================
 float attribute Invalid space before point
 :error
@@ -1131,6 +1207,8 @@ netcdf basic {
 }
 
 ---
+
+
 
 ================================================
 float attribute Invalid 'Fortran' D notation
@@ -1147,6 +1225,8 @@ netcdf basic {
 
 ---
 
+
+
 ================================================
 float attribute Invalid space before suffix
 :error
@@ -1161,6 +1241,8 @@ netcdf basic {
 }
 
 ---
+
+
 
 ================================================
 float attribute Invalid point only
@@ -1177,6 +1259,8 @@ netcdf basic {
 
 ---
 
+
+
 ================================================
 float attribute Invalid no scientific exponent
 :error
@@ -1192,6 +1276,8 @@ netcdf basic {
 
 ---
 
+
+
 ================================================
 float attribute Invalid scientific exponent no number
 :error
@@ -1206,6 +1292,8 @@ netcdf basic {
 }
 
 ---
+
+
 
 ================================================
 byte attribute b
@@ -1225,16 +1313,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (byte)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (byte)))))
 
 ================================================
 byte attribute B
@@ -1254,16 +1344,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (byte)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (byte)))))
 
 ================================================
 byte attribute 0
@@ -1283,16 +1375,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (byte)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (byte)))))
 
 ================================================
 byte attribute 255
@@ -1312,16 +1406,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (byte)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (byte)))))
 
 ================================================
 byte attribute invalid negative
@@ -1338,6 +1434,8 @@ netcdf basic {
 
 ---
 
+
+
 ================================================
 byte attribute invalid 256
 :error
@@ -1353,6 +1451,8 @@ netcdf basic {
 
 ---
 
+
+
 ================================================
 byte attribute invalid B only
 :error
@@ -1367,6 +1467,8 @@ netcdf basic {
 }
 
 ---
+
+
 
 ================================================
 char attribute
@@ -1386,16 +1488,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (char)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (char)))))
 
 ================================================
 char attribute ~
@@ -1415,16 +1519,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (char)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (char)))))
 
 ================================================
 char attribute escaped \n
@@ -1444,16 +1550,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (char)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (char)))))
 
 ================================================
 char attribute escaped \t
@@ -1473,16 +1581,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (char)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (char)))))
 
 ================================================
 char attribute non-standard C escape
@@ -1503,16 +1613,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (char)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (char)))))
 
 ================================================
 char attribute Octal
@@ -1532,16 +1644,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (char)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (char)))))
 
 ================================================
 char attribute Hexadecimal
@@ -1561,16 +1675,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (char)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (char)))))
 
 ================================================
 char attribute undefined allowed
@@ -1590,16 +1706,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (char)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (char)))))
 
 ================================================
 char attribute Invalid multiple
@@ -1616,6 +1734,8 @@ netcdf basic {
 
 ---
 
+
+
 ================================================
 char attribute Invalid no closing quote
 :error
@@ -1631,6 +1751,8 @@ netcdf basic {
 
 ---
 
+
+
 ================================================
 char attribute Invalid no closing quote
 :error
@@ -1645,6 +1767,8 @@ netcdf basic {
 }
 
 ---
+
+
 
 ================================================
 string attribute
@@ -1664,16 +1788,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (string)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (string)))))
 
 ================================================
 string attribute single
@@ -1693,16 +1819,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (string)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (string)))))
 
 ================================================
 string attribute escape
@@ -1722,16 +1850,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (string)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (string)))))
 
 ================================================
 string attribute space
@@ -1751,16 +1881,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (string)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (string)))))
 
 ================================================
 string attribute symbol
@@ -1780,16 +1912,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (string)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (string)))))
 
 ================================================
 string attribute Octal
@@ -1809,16 +1943,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (string)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (string)))))
 
 ================================================
 string attribute inline UTF8
@@ -1838,16 +1974,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (string)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (string)))))
 
 ================================================
 string attribute Special "NIL"
@@ -1867,16 +2005,18 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
-      (comment)
-      (attribute
-        type: (type)
-        variable: (identifier)
-        name: (identifier)
-        value: (value
-          (string)))))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      value: (value
+        (string)))))
 
 ================================================
 string attribute Invalid no closing quote
@@ -1893,6 +2033,8 @@ netcdf basic {
 
 ---
 
+
+
 ================================================
 char attribute Invalid no closing quote space
 :error
@@ -1907,3 +2049,5 @@ netcdf basic {
 }
 
 ---
+
+
