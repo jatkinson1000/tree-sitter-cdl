@@ -1,5 +1,5 @@
 ===============================================
-single attribute
+single variable attribute
 ===============================================
 
 netcdf basic {
@@ -27,7 +27,7 @@ netcdf basic {
         (integer)))))
 
 ===============================================
-single attribute multiple values
+single variable attribute multiple values
 ===============================================
 
 netcdf basic {
@@ -85,7 +85,7 @@ netcdf basic {
         (integer)))))
 
 ===============================================
-single primitive typed global attribute
+single primitive typed global attribute in variables
 ===============================================
 
 netcdf basic {
@@ -100,13 +100,13 @@ netcdf basic {
   (variables_section
     (attribute
       type: (typeref
-         (type))
+        (type))
       name: (identifier)
       value: (value
         (integer)))))
 
 ===============================================
-single derived typed global attribute
+single derived typed global attribute in variables
 ===============================================
 
 netcdf basic {
@@ -128,7 +128,7 @@ netcdf basic {
         (integer)))))
 
 ===============================================
-single global attribute (untyped)
+single global attribute (untyped) in variables
 ===============================================
 
 netcdf basic {
@@ -141,6 +141,86 @@ netcdf basic {
 (dataset
   (dataset_id)
   (variables_section
+    (attribute
+      name: (identifier)
+      value: (value
+        (integer)))))
+
+===============================================
+single primitive typed global attribute in dimensions
+===============================================
+
+netcdf basic {
+    dimensions:
+        a = 1;
+        int :attr = 1;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (dimensions_section
+    (dimension_declarations
+      (dimension
+        name: (identifier)
+        size: (dimension_size
+          (const_positive_int))))
+    (attribute
+      type: (typeref
+        (type))
+      name: (identifier)
+      value: (value
+        (integer)))))
+
+===============================================
+single derived typed global attribute in dimensions
+===============================================
+
+netcdf basic {
+    dimensions:
+        a = 1;
+        my_type :asdf = 12;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (dimensions_section
+    (dimension_declarations
+      (dimension
+        name: (identifier)
+        size: (dimension_size
+          (const_positive_int))))
+    (attribute
+      type: (typeref
+        (derived_type
+          (identifier)))
+      name: (identifier)
+      value: (value
+        (integer)))))
+
+===============================================
+single global attribute (untyped) in dimensions
+===============================================
+
+netcdf basic {
+    dimensions:
+        a = 1;
+        :attr = 1;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (dimensions_section
+    (dimension_declarations
+      (dimension
+        name: (identifier)
+        size: (dimension_size
+          (const_positive_int))))
     (attribute
       name: (identifier)
       value: (value

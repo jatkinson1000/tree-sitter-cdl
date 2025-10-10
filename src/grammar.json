@@ -98,6 +98,10 @@
               {
                 "type": "SYMBOL",
                 "name": "compound_type"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "attribute"
               }
             ]
           }
@@ -461,8 +465,17 @@
         {
           "type": "REPEAT",
           "content": {
-            "type": "SYMBOL",
-            "name": "dimension_declarations"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "dimension_declarations"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "attribute"
+              }
+            ]
           }
         }
       ]

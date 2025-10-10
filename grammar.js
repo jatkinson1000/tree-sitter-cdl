@@ -71,6 +71,7 @@ module.exports = grammar({
         $.vlen_type,
         $.opaque_type,
         $.compound_type,
+        $.attribute,
       )),
     ),
 
@@ -137,7 +138,10 @@ module.exports = grammar({
     // Can be a comma-separated list
     dimensions_section: $ => seq(
       'dimensions:',
-      repeat($.dimension_declarations),
+      repeat(choice(
+        $.dimension_declarations,
+        $.attribute,
+      )),
     ),
 
     dimension_declarations: $ => seq(
