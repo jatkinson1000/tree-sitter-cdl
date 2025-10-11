@@ -1,5 +1,8 @@
 # tree-sitter-cdl
 
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/jatkinson1000/tree-sitter-cdl/ci.yaml?style=plastic&label=CI)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/jatkinson1000/tree-sitter-cdl/lint.yaml?style=plastic&label=Quality)
+
 [CDL (Common Data Language)](https://docs.unidata.ucar.edu/nug/2.0-draft/cdl.html)
 grammar for [tree-sitter](https://github.com/tree-sitter/tree-sitter).
 
