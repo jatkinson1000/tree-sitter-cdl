@@ -10,6 +10,79 @@ CDL is used to represent data from [NetCDF](https://docs.unidata.ucar.edu/netcdf
 files in a text-based, human-readable format.
 
 
+## Setup and Use
+
+### Basic setup
+
+1. **Install the tree-sitter CLI.**\
+   There are [several ways of doing this](https://tree-sitter.github.io/tree-sitter/creating-parsers/1-getting-started.html#installation).
+   The easiest, assuming you
+   [have Rust on your system](https://rust-lang.org/tools/install/), is using
+   [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html):
+   ```
+   cargo install tree-sitter-cli --locked
+   ```
+
+2. **Clone this repository.**
+
+3. [**Set up tree-sitter**](https://tree-sitter.github.io/tree-sitter/cli/init-config.html)
+   by running:
+   ```
+   tree-sitter init-config
+   ```
+   and [edit the resulting configuration file](https://tree-sitter.github.io/tree-sitter/cli/init-config.html#parser-directories)
+   to add the directory containing `tree-sitter-cdl/` to the `parser-directories`
+   array. Note: you must add the containing directory, not the directory itself!
+
+4. **Build the CDL grammar**\
+   Navigate to the `tree-sitter-cdl` directory that you cloned and run:
+   ```
+   tree-sitter generate
+   ```
+   You can test if this was successful by running `tree-sitter dump-languages`
+   from somewhere else which should show information for the cdl language.
+
+4. **Run**\
+   You should now be able to run syntax highlighting on a `.cdl` file from the
+   command line by running:
+   ```
+   tree-sitter highlight myfile.cdl
+   ```
+
+For the many ways in which you can use a tree-sitter grammar and parser see the
+[official tree-sitter documentation](https://tree-sitter.github.io/tree-sitter/index.html).
+
+
+### Highlighting for `ncdump`
+
+To get syntax highlighting on the results of the `ncdump` command we need to pipe
+the output to the tree-sitter highlight query.
+Since we cannot detect the file type from the extension (`.cdl`) we need to tell
+tree-sitter which scope to use.
+```
+ncdump myfile.nc | tree-sitter highlight --scope source.cdl
+```
+
+If you want this to be the default behaviour for ncdump then add the following to
+your `.bashrc` or `.zshrc` file:
+```bash
+ncdump() {
+  command ncdump "$@" | tree-sitter highlight --scope source.cdl
+}
+```
+This will create a function that automatically replaces ncdump to pipe through
+tree-sitter whilst preserving options like `-h` or `-v var` etc.
+
+If you want to preserve `ncdump` you could instead name it `nccolordump` or similar.
+
+
+### Highlighting in text editors
+
+Many text editors have support for tree-sitter including
+[Neovim](https://github.com/nvim-treesitter/nvim-treesitter/tree/main)
+and [emacs](https://www.emacswiki.org/emacs/Tree-sitter).
+
+
 ## Project Progress
 
 > [!NOTE]  
@@ -37,11 +110,6 @@ A rough outline is as follows:
     - [ ] Types
     - [ ] ...
 - [ ] Implement syntax highlighting for TextMate and use
-
-
-## Setup and Use
-
-WIP
 
 
 ## License
