@@ -85,3 +85,9 @@ See [Contributors](https://github.com/jatkinson1000/tree-sitter-cdl/graphs/contr
 for a full list of contributors.
 
 If you make use of this please do let me know so that I can feature your work here.
+
+## References
+
+- [NetCDF User Guide: CDL Syntax](https://docs.unidata.ucar.edu/nug/2.0-draft/cdl.html).
+- [`ncgen.y` YACC Parser from ncgen in NetCDF-C](https://github.com/Unidata/netcdf-c/blob/main/ncgen/ncgen.l)
+- [`ncgen.l` Lexer from ncgen in NetCDF-C](https://github.com/Unidata/netcdf-c/blob/main/ncgen/ncgen.l) from `netcdf-c`.
