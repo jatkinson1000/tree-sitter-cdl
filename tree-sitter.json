@@ -9,8 +9,10 @@
       "file-types": [
         "cdl"
       ],
+      "first-line-regex": "^netcdf\\b.*{$",
       "injection-regex": "^cdl$",
-      "class-name": "TreeSitterCdl"
+      "class-name": "TreeSitterCdl",
+      "highlights": "queries/highlights.scm"
     }
   ],
   "metadata": {
