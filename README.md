@@ -83,10 +83,18 @@ Many text editors have support for tree-sitter including
 and [emacs](https://www.emacswiki.org/emacs/Tree-sitter).
 
 
-## Project Progress
+## License
+
+Copyright &copy; Jack Atkinson
+
+_tree-sitter-cdl_ is distributed under the
+[MIT Licence](https://github.com/jatkinson1000/tree-sitter-cdl/blob/main/LICENSE).
+
+
+## Project Roadmap
 
 > [!NOTE]  
-> This project is in early stages and therefore subject to significant
+> This project is still in early stages and therefore subject to significant
 > changes.
 
 It follows the tree-sitter guidance for
@@ -105,18 +113,21 @@ A rough outline is as follows:
 - [ ] Implement rules in the grammar file
     - [x] Basic syntax (names, comments, whitespace)
     - [x] Dimensions
-    - [ ] Variables
+    - [x] Variables
     - [ ] Data
-    - [ ] Types
-    - [ ] ...
-- [ ] Implement syntax highlighting for TextMate and use
-
-
-## License
-
-Copyright &copy; Jack Atkinson
-
-_tree-sitter-cdl_ is distributed under the [MIT Licence](https://github.com/jatkinson1000/tree-sitter-cdl/blob/main/LICENSE).
+        - [x] Datalists
+        - [ ] Enum values in data
+    - [ ] Attributes
+        - [ ] Global attributes
+        - [ ] Special attributes
+    - [x] Types
+    - [ ] Groups
+- [ ] Syntax highlighting
+    - [x] tree-sitter queries
+    - [ ] TextMate
+- [ ] Contribute to external libraries
+    - [ ] Neovim tree-sitter
+    - [ ] VSCode?
 
 
 ## Contributions
