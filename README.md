@@ -81,6 +81,7 @@ If you want to preserve `ncdump` you could instead name it `nccolordump` or simi
 Many text editors have support for tree-sitter including
 [Neovim](https://github.com/nvim-treesitter/nvim-treesitter/tree/main)
 and [emacs](https://www.emacswiki.org/emacs/Tree-sitter).
+For specifics see [instructions for text-editors](https://github.com/jatkinson1000/tree-sitter-cdl/blob/main/doc/text-editors.md).
 
 
 ## License
