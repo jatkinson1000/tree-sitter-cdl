@@ -31,8 +31,8 @@ files in a text-based, human-readable format.
    tree-sitter init-config
    ```
    and [edit the resulting configuration file](https://tree-sitter.github.io/tree-sitter/cli/init-config.html#parser-directories)
-   to add the directory containing `tree-sitter-cdl/` to the `parser-directories`
-   array. Note: you must add the containing directory, not the directory itself!
+   to add the directory **containing** `tree-sitter-cdl/` to the `parser-directories`
+   array. Note: you must add the _containing_ directory, not the directory itself!
 
 4. **Build the CDL grammar**\
    Navigate to the `tree-sitter-cdl` directory that you cloned and run:
@@ -129,13 +129,11 @@ generally, to follow the guidelines articulated in the
 _tree-sitter-cdl_ is currently a hobby project by [Jack Atkinson](https://jackatkinson.net/)
 maintained in spare time.
 
-See [Contributors](https://github.com/jatkinson1000/tree-sitter-cdl/graphs/contributors)
-for a full list of contributors.
-
 If you make use of this please do let me know so that I can feature your work here.
+
 
 ## References
 
 - [NetCDF User Guide: CDL Syntax](https://docs.unidata.ucar.edu/nug/2.0-draft/cdl.html).
-- [`ncgen.y` YACC Parser from ncgen in NetCDF-C](https://github.com/Unidata/netcdf-c/blob/main/ncgen/ncgen.l)
-- [`ncgen.l` Lexer from ncgen in NetCDF-C](https://github.com/Unidata/netcdf-c/blob/main/ncgen/ncgen.l) from `netcdf-c`.
+- `ncgen.y` [YACC Parser from ncgen in NetCDF-C](https://github.com/Unidata/netcdf-c/blob/main/ncgen/ncgen.l)
+- `ncgen.l` [Lexer from ncgen in NetCDF-C](https://github.com/Unidata/netcdf-c/blob/main/ncgen/ncgen.l)
