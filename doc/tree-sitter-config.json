@@ -1,0 +1,63 @@
+{
+  "parser-directories": [
+    "/home/username"
+  ],
+  "theme": {
+    "attribute": {
+      "color": 67,
+      "italic": true
+    },
+    "comment": {
+      "color": 59,
+      "italic": true
+    },
+    "constant": 81,
+    "constant.builtin": {
+      "bold": true,
+      "color": 81
+    },
+    "constructor": 74,
+    "embedded": null,
+    "function": 75,
+    "function.builtin": {
+      "bold": true,
+      "color": 75
+    },
+    "keyword": 88,
+    "module": 74,
+    "number": {
+      "bold": true,
+      "color": 81
+    },
+    "operator": {
+      "bold": true,
+      "color": 248
+    },
+    "property": 105,
+    "property.builtin": {
+      "bold": true,
+      "color": 105
+    },
+    "punctuation": 248,
+    "punctuation.bracket": 248,
+    "punctuation.delimiter": 248,
+    "punctuation.special": 248,
+    "string": 34,
+    "string.special": 66,
+    "tag": 18,
+    "type": 31,
+    "type.builtin": {
+      "bold": true,
+      "color": 31
+    },
+    "variable": 252,
+    "variable.builtin": {
+      "bold": true,
+      "color": 252
+    },
+    "variable.parameter": {
+      "color": 252,
+      "underline": true
+    }
+  }
+}
