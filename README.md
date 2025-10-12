@@ -94,41 +94,11 @@ _tree-sitter-cdl_ is distributed under the
 
 ## Project Roadmap
 
-> [!NOTE]  
-> This project is still in early stages and therefore subject to significant
-> changes.
+Detailed plans for development of this project can be seen in the 
+[roadmap](https://github.com/jatkinson1000/tree-sitter-cdl/blob/main/doc/roadmap.md)
+document.
 
-It follows the tree-sitter guidance for
-[adding new parsers](https://tree-sitter.github.io/tree-sitter/creating-parsers/index.html)
-and uses the CDL syntax
-[outlined in the NetCDF User Guide](https://docs.unidata.ucar.edu/nug/2.0-draft/cdl.html).
-
-Of particular use are the YAAC parser file
-[`ncgen.y`](https://github.com/Unidata/netcdf-c/blob/main/ncgen/ncgen.l)
-and the corresponding lexer file
-[`ncgen.l`](https://github.com/Unidata/netcdf-c/blob/main/ncgen/ncgen.l) from `netcdf-c`.
-
-A rough outline is as follows:
-
-- [x] Run tree-sitter-init and generate base repository
-- [ ] Implement rules in the grammar file
-    - [x] Basic syntax (names, comments, whitespace)
-    - [x] Dimensions
-    - [x] Variables
-    - [ ] Data
-        - [x] Datalists
-        - [ ] Enum values in data
-    - [ ] Attributes
-        - [ ] Global attributes
-        - [ ] Special attributes
-    - [x] Types
-    - [ ] Groups
-- [ ] Syntax highlighting
-    - [x] tree-sitter queries
-    - [ ] TextMate
-- [ ] Contribute to external libraries
-    - [ ] Neovim tree-sitter
-    - [ ] VSCode?
+These include future features and integration with other codes.
 
 
 ## Contributions
