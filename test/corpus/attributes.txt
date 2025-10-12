@@ -187,6 +187,71 @@ netcdf basic {
           (integer))))))
 
 ===============================================
+single primitive typed global attribute in types
+===============================================
+
+netcdf basic {
+    types:
+        int :attr = 1;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (attribute
+      type: (typeref
+        (type))
+      name: (identifier)
+      (data_list
+        (value
+          (integer))))))
+
+===============================================
+single derived typed global attribute in variables
+===============================================
+
+netcdf basic {
+    types:
+        my_type :asdf = 12;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (attribute
+      type: (typeref
+        (derived_type
+          (identifier)))
+      name: (identifier)
+      (data_list
+        (value
+          (integer))))))
+
+===============================================
+single global attribute (untyped) in variables
+===============================================
+
+netcdf basic {
+    types:
+        :attr = 1;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section
+    (attribute
+      name: (identifier)
+      (data_list
+        (value
+          (integer))))))
+
+===============================================
 single primitive typed global attribute in variables
 ===============================================
 
