@@ -901,7 +901,7 @@
       "type": "TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "[a-zA-Z_][a-zA-Z0-9_.+\\-@]*"
+        "value": "[a-zA-Z_][\\w.+\\-@]*"
       }
     },
     "identifier": {
@@ -942,7 +942,7 @@
               "members": [
                 {
                   "type": "PATTERN",
-                  "value": "[a-zA-Z0-9_.@+-]"
+                  "value": "[\\w.@+-]"
                 },
                 {
                   "type": "SEQ",

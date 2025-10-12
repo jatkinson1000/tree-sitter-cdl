@@ -9,7 +9,7 @@
 
 // Constants for use in constructing identifiers
 const letterOrUnderscore = /[a-zA-Z_]/;
-const ncSpecialChars = /[a-zA-Z0-9_.@+-]/; // Original set - do not need to be escaped
+const ncSpecialChars = /[\w.@+-]/; // Original set - do not need to be escaped
 const utf8Chars = /[\u0080-\uFFFF]/;
 const escapedDigits = seq('\\', /\d+/);
 const escapedChars = seq('\\', /[ !"#$%&'()*,:;<=>?\[\\\]^`{|}~]/);
@@ -232,7 +232,7 @@ module.exports = grammar({
     dataset_id: $ => token(/[^{][^{]*/),
 
     // Old spec: Identifiers start with a-zA-Z_ be non-zero length and contain a-zA-Z0-9_.+-@
-    identifier_old: $ => token(/[a-zA-Z_][a-zA-Z0-9_.+\-@]*/),
+    identifier_old: $ => token(/[a-zA-Z_][\w.+\-@]*/),
 
     // Current spec: Identifiers
     identifier: $ => token(
