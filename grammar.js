@@ -55,7 +55,7 @@ module.exports = grammar({
       'netcdf',
       $.dataset_id,
       '{',
-      optional(repeat($.attribute)),
+      repeat($.attribute),
       optional($.types_section),
       optional($.dimensions_section),
       optional($.variables_section),
