@@ -122,18 +122,6 @@ Dataset with single dimension and invalid dimensions declaration
 =================================================================
 
 netcdf basic {
-    dimensions :
-        a = 1;
-}
-
----
-
-=================================================================
-Dataset with single dimension and invalid dimensions declaration
-:error
-=================================================================
-
-netcdf basic {
     dimensions;
         a = 1;
 }

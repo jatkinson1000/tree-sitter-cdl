@@ -1,4 +1,62 @@
 ===============================================
+single global attribute
+===============================================
+
+netcdf basic {
+    float :attr = 1.0;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (attribute
+    type: (typeref
+      (type))
+    name: (identifier)
+    (data_list
+      (value
+        (float)))))
+
+===============================================
+single global attribute before types
+===============================================
+
+netcdf basic {
+    int :attr = 1;
+
+    types:
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (attribute
+    type: (typeref
+      (type))
+    name: (identifier)
+    (data_list
+      (value
+        (integer))))
+  (types_section))
+
+===============================================
+single global attribute after data
+:error
+===============================================
+
+netcdf basic {
+    data:
+
+    float :attr = 2.0;
+}
+
+---
+
+
+
+===============================================
 single variable attribute
 ===============================================
 

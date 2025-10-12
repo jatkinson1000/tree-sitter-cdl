@@ -176,6 +176,10 @@
       "required": true,
       "types": [
         {
+          "type": "attribute",
+          "named": true
+        },
+        {
           "type": "data_section",
           "named": true
         },
