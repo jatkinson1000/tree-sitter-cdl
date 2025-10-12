@@ -1,0 +1,221 @@
+==============================
+Dataset with empty group
+==============================
+
+netcdf basic {
+    group: grp {}
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (group
+    (identifier)))
+
+==============================
+Group Invalid missing colon
+:error
+==============================
+
+netcdf basic {
+    group grp {} ;
+}
+
+---
+
+
+
+==============================
+Group Invalid ending with semi-colon
+:error
+==============================
+
+netcdf basic {
+    group: grp {} ;
+}
+
+---
+
+
+
+==============================
+Group Invalid unclosed bracket
+:error
+==============================
+
+netcdf basic {
+    group: grp {
+}:with
+
+---
+
+
+
+==============================
+Group Invalid missing open bracket
+:error
+==============================
+
+netcdf basic {
+    group: grp }
+}
+
+---
+
+
+
+==============================
+Group Invalid missing groupname
+:error
+==============================
+
+netcdf basic {
+    group: {}
+}
+
+---
+
+
+
+==============================
+Dataset with group after sections
+==============================
+
+netcdf basic {
+    types:
+    dimensions:
+    variables:
+    data:
+    group: grp {}
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section)
+  (dimensions_section)
+  (variables_section)
+  (data_section)
+  (group
+    (identifier)))
+
+==============================
+Dataset Invalid with group before variables
+:error
+==============================
+
+netcdf basic {
+    types:
+    dimensions:
+    group: grp {}
+    variables:
+    data:
+}
+
+---
+
+
+
+==============================
+Dataset Invalid with group before data
+:error
+==============================
+
+netcdf basic {
+    types:
+    dimensions:
+    variables:
+    group: grp {}
+    data:
+}
+
+---
+
+
+
+==============================
+Dataset with multiple groups
+==============================
+
+netcdf basic {
+    types:
+    dimensions:
+    variables:
+    data:
+    group: grp_a {}
+    group: grp_b {}
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section)
+  (dimensions_section)
+  (variables_section)
+  (data_section)
+  (group
+    (identifier))
+  (group
+    (identifier)))
+
+==============================
+Dataset with group containing all sections
+==============================
+
+netcdf basic {
+    group: grp {
+        types:
+        dimensions:
+        variables:
+        data:
+    }
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (group
+    (identifier)
+    (types_section)
+    (dimensions_section)
+    (variables_section)
+    (data_section)))
+
+==============================
+Dataset with nested groups
+==============================
+
+netcdf basic {
+    types:
+
+    group: grp_outer {
+        types:
+
+        group: grp_inter {
+            types:
+
+            group: grp_inner {
+                types:
+            }
+        }
+    }
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (types_section)
+  (group
+    (identifier)
+    (types_section)
+    (group
+      (identifier)
+      (types_section)
+      (group
+        (identifier)
+        (types_section)))))

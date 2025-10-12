@@ -60,6 +60,13 @@ module.exports = grammar({
       optional($.dimensions_section),
       optional($.variables_section),
       optional($.data_section),
+      optional(seq(
+        $.group, // Global attributes can only appear after data if there is a group first
+        repeat(choice(
+          $.group,
+          $.attribute,
+        )),
+      )),
       '}',
     ),
 
@@ -224,6 +231,27 @@ module.exports = grammar({
           seq('{', $.data_list, '}'),
         ),
       ),
+    ),
+
+
+    // Groups
+    group: $ => seq(
+      'group:',
+      field('groupname', $.identifier),
+      '{',
+      repeat($.attribute),
+      optional($.types_section),
+      optional($.dimensions_section),
+      optional($.variables_section),
+      optional($.data_section),
+      optional(seq(
+        $.group, // Global attributes can only appear after data if there is a group first
+        repeat(choice(
+          $.group,
+          $.attribute,
+        )),
+      )),
+      '}',
     ),
 
 

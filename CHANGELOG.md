@@ -34,6 +34,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
         - data assignments of single values, comma-separated lists
         - datalists `{ ... }` for compound types
         - fill value `_`
+    - Groups
+        - Representation of groups containing same elements as main dataset.
+        - Allows for nested groups.
     - Identifiers
         - CDL names syntax: starting letter, underscore, escaped digit or UTF8
         - rimitive CDL types

@@ -8,6 +8,7 @@
  "dimensions:"
  "variables:"
  "data:"
+ "group:"
 ] @module
 
 (comment) @comment

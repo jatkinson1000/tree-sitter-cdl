@@ -57,6 +57,33 @@ netcdf basic {
 
 
 ===============================================
+single global attribute after group
+===============================================
+
+netcdf basic {
+    data:
+
+    group: grp {}
+
+    float :attr = 2.0;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (data_section)
+  (group
+    (identifier))
+  (attribute
+    (typeref
+      (type))
+    (identifier)
+    (data_list
+      (value
+        (float)))))
+
+===============================================
 single variable attribute
 ===============================================
 

@@ -192,6 +192,10 @@
           "named": true
         },
         {
+          "type": "group",
+          "named": true
+        },
+        {
           "type": "types_section",
           "named": true
         },
@@ -427,6 +431,52 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "group",
+    "named": true,
+    "fields": {
+      "groupname": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "attribute",
+          "named": true
+        },
+        {
+          "type": "data_section",
+          "named": true
+        },
+        {
+          "type": "dimensions_section",
+          "named": true
+        },
+        {
+          "type": "group",
+          "named": true
+        },
+        {
+          "type": "types_section",
+          "named": true
+        },
+        {
+          "type": "variables_section",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -680,11 +730,11 @@
   },
   {
     "type": "char",
-    "named": true
+    "named": false
   },
   {
     "type": "char",
-    "named": false
+    "named": true
   },
   {
     "type": "comment",
@@ -730,6 +780,10 @@
   {
     "type": "float",
     "named": true
+  },
+  {
+    "type": "group:",
+    "named": false
   },
   {
     "type": "identifier",
