@@ -9,3 +9,51 @@ netcdf basic {
 
 (dataset
   (dataset_id))
+
+
+=========================
+Dataset with dimensions too late
+:error
+=========================
+
+netcdf basic {
+    types:
+
+    variables:
+
+    dimensions:
+}
+
+---
+
+
+
+=========================
+Dataset with types too late
+:error
+=========================
+
+netcdf basic {
+    dimensions:
+
+    types:
+}
+
+---
+
+
+
+=========================
+Dataset with data too early too late
+:error
+=========================
+
+netcdf basic {
+    dimensions:
+
+    data:
+
+    variables:
+}
+
+---
