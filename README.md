@@ -143,17 +143,15 @@ can address an [open issue](https://github.com/jatkinson1000/tree-sitter-cdl/iss
 please [fork the repository](https://github.com/jatkinson1000/tree-sitter-cdl/fork) and
 open a pull request.
 
+Further details of the development process are available in the
+[developer guidelines](https://github.com/jatkinson1000/tree-sitter-cdl/blob/main/doc/develop.md).
+
+
 ### Code of Conduct
-Everyone participating in the _tree-sitter-cdl_ project, and in particular in the
-issue tracker, pull requests, and social media activity, is expected to treat other
-people with respect and, more generally, to follow the guidelines articulated in the
+Everyone participating in the _tree-sitter-cdl_ project, in particular in issues
+and pull requests, is expected to treat other people with respect and, more
+generally, to follow the guidelines articulated in the
 [Python Community Code of Conduct](https://www.python.org/psf/codeofconduct/).
-
-### Developer guidelines
-
-Code quality is enforced through a linting workflow that checks the `grammar.js` file
-using [eslint](https://github.com/eslint/eslint) and GitHub workflows using
-[zizmor](https://github.com/zizmorcore/zizmor).
 
 
 ## Authors and Acknowledgment
