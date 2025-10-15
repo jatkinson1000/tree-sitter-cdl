@@ -377,9 +377,6 @@ module.exports = grammar({
 
     nc_unlimited: $ => token(/unlimited|UNLIMITED/),
 
-    // Statements should end in a ;
-    statement: $ => seq($.identifier, ';'),
-
 
     // Other useful types we can define in places
     // Constant positive integer with optional U suffix
