@@ -1461,8 +1461,7 @@ netcdf basic {
           (byte))))))
 
 ================================================
-byte attribute invalid negative
-:error
+byte attribute negative
 ================================================
 
 netcdf basic {
@@ -1475,7 +1474,23 @@ netcdf basic {
 
 ---
 
-
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (typeref
+        (type))
+      (variable
+        name: (identifier)))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      (data_list
+        (value
+          (byte))))))
 
 ================================================
 byte attribute invalid 256
