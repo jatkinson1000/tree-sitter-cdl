@@ -17,22 +17,22 @@ const escapedChars = seq('\\', /[ !"#$%&'()*,:;<=>?\[\\\]^`{|}~]/);
 
 // integer suffixes s/S Short 16bit, l/L Long 32bit (deprecated), ll/LL Long Long 64bit
 // and u/U Unsigned.
-// u should be allowed either side of specifier by the CDL spec, but ncgen gives an error if after.
 const integer_suffix = choice(
   /[uU]/, // Unsigned
   /[sS]/, // Short
   /[lL]{1,2}/, // Long or Long Long
   /[uU][lL]{1,2}/, // Unsigned Long or Unsigned Long Long
-  // /[lL]{1,2}[uU]/, // Long Unsigned or Long Long Unsigned
+  /[lL]{1,2}[uU]/, // Long Unsigned or Long Long Unsigned
   /[uU][sS]/, // Unsigned Short
-  // /[sS][uU]/, // Short Unsigned
+  /[sS][uU]/, // Short Unsigned
 );
+
+// float suffixes f/F Float and d/D Double.
+// ncgen will also parse l/L to Double, though not explicitly in the spec
 const float_suffix = choice(
-  choice(
-    /[fF]/, // Float
-    /[dD]/, // Double
-    /[lL]/, // Long double
-  ),
+  /[fF]/, // Float
+  /[dD]/, // Double
+  /[lL]/, // Double (permissable though not explicitly in spec)
 );
 
 const PREC = {
@@ -327,8 +327,8 @@ module.exports = grammar({
     float: $ => token(
       seq(
         choice(
-          /-?\d+\.\d*([eE][+-]?\d+)?[fFdDlL]?/, // Digits before and optional digits after the decimal point with optional scientific notation
-          /-?\.\d+([eE][+-]?\d+)?[fFdDlL]?/, // Decimal point followed by digits
+          /-?\d+\.\d*([eE][+-]?\d+)?/, // Digits before and optional digits after the decimal point with optional scientific notation
+          /-?\.\d+([eE][+-]?\d+)?/, // Decimal point followed by digits
           /-?\d+[eE][+-]?\d+/, // Scientific notation without a decimal point
         ),
         optional(float_suffix),

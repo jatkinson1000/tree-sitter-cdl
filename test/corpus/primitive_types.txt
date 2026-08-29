@@ -416,8 +416,6 @@ netcdf basic {
 
 =========================================================
 long long unsigned 64bit integer attribute
-:error
-// Should pass from spec, but does not in ncgen
 =========================================================
 
 netcdf basic {
@@ -434,16 +432,147 @@ netcdf basic {
   (dataset_id)
   (variables_section
     (variable_declarations
-      type: (type)
+      type: (typeref
+        (type))
       (variable
         name: (identifier)))
     (comment)
     (attribute
-      type: (type)
+      type: (typeref
+        (type))
       variable: (identifier)
       name: (identifier)
-      value: (value
-        (integer)))))
+      (data_list
+        (value
+          (integer))))))
+
+=========================================================
+short unsigned su 16bit integer attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_i = 42su;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (typeref
+        (type))
+      (variable
+        name: (identifier)))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      (data_list
+        (value
+          (integer))))))
+
+=========================================================
+short unsigned SU 16bit integer attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_i = 42SU;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (typeref
+        (type))
+      (variable
+        name: (identifier)))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      (data_list
+        (value
+          (integer))))))
+
+=========================================================
+long unsigned lu 32bit integer attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_i = 42lu;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (typeref
+        (type))
+      (variable
+        name: (identifier)))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      (data_list
+        (value
+          (integer))))))
+
+=========================================================
+long long unsigned llU 64bit integer attribute
+=========================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_i = 42llU;
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (variables_section
+    (variable_declarations
+      type: (typeref
+        (type))
+      (variable
+        name: (identifier)))
+    (comment)
+    (attribute
+      type: (typeref
+        (type))
+      variable: (identifier)
+      name: (identifier)
+      (data_list
+        (value
+          (integer))))))
 
 =========================================================
 Octal attribute
@@ -1212,6 +1341,57 @@ netcdf basic {
       (data_list
         (value
           (float))))))
+
+================================================
+float attribute Invalid repeated f suffix
+:error
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 3.14159ff ;
+}
+
+---
+
+
+
+================================================
+float attribute Invalid repeated d suffix
+:error
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 3.14159dd ;
+}
+
+---
+
+
+
+================================================
+float attribute Invalid repeated l suffix
+:error
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 3.14159ll ;
+}
+
+---
+
+
 
 ================================================
 float attribute Invalid space after point
