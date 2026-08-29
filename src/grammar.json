@@ -1289,7 +1289,15 @@
                   },
                   {
                     "type": "PATTERN",
+                    "value": "[lL]{1,2}[uU]"
+                  },
+                  {
+                    "type": "PATTERN",
                     "value": "[uU][sS]"
+                  },
+                  {
+                    "type": "PATTERN",
+                    "value": "[sS][uU]"
                   }
                 ]
               },
