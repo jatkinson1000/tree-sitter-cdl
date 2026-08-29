@@ -27,12 +27,13 @@ const integer_suffix = choice(
   /[uU][sS]/, // Unsigned Short
   // /[sS][uU]/, // Short Unsigned
 );
+
+// float suffixes f/F Float and d/D Double.
+// ncgen will also parse l/L to Double, though not explicitly in the spec
 const float_suffix = choice(
-  choice(
-    /[fF]/, // Float
-    /[dD]/, // Double
-    /[lL]/, // Long double
-  ),
+  /[fF]/, // Float
+  /[dD]/, // Double
+  /[lL]/, // Double (permissable though not explicitly in spec)
 );
 
 const PREC = {

@@ -1330,21 +1330,16 @@
                 "type": "CHOICE",
                 "members": [
                   {
-                    "type": "CHOICE",
-                    "members": [
-                      {
-                        "type": "PATTERN",
-                        "value": "[fF]"
-                      },
-                      {
-                        "type": "PATTERN",
-                        "value": "[dD]"
-                      },
-                      {
-                        "type": "PATTERN",
-                        "value": "[lL]"
-                      }
-                    ]
+                    "type": "PATTERN",
+                    "value": "[fF]"
+                  },
+                  {
+                    "type": "PATTERN",
+                    "value": "[dD]"
+                  },
+                  {
+                    "type": "PATTERN",
+                    "value": "[lL]"
                   }
                 ]
               },
