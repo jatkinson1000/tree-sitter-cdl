@@ -24,7 +24,16 @@ A rough outline is as follows:
         - [x] Generic attributes
         - [ ] Global attributes
         - [ ] Special attributes
-    - [ ] Groups
+    - [x] Groups
+        - [x] Group structure (`group: g { ... }`)
+        - [ ] Paths (absolute, slash-separated references such as `/g1/g2/t1` to
+          types, dimensions and variables declared in groups; requires the
+          external scanner to distinguish `/` from the `//` comment start)
+            - [x] Dimension references in variable declarations
+            - [x] Type references
+            - [ ] Variable references in `data:`
+            - [ ] Variable references in attributes `int /g/var:attr = 1 ;`
+            - [ ] Enum references in data
 - [ ] Build and ship external bindings
     - [ ] Rust
     - [ ] Python

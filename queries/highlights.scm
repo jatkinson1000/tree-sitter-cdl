@@ -11,6 +11,11 @@
  "group:"
 ] @module
 
+
+(group (identifier) @function)
+(groupname) @function
+
+
 (comment) @comment
 
 [
@@ -22,8 +27,7 @@
 ] @type
 
 ; Color 'derived_type' identifiers as types
-(derived_type
-  (identifier) @type)
+(derived_type (path (identifier) @type))
 
 (nc_unlimited) @constant.builtin
 (fill_value) @constant.builtin
@@ -38,7 +42,8 @@
 
 ; Color variable 'dimension' identifiers as numbers
 (dimension_spec
-  (identifier) @number)
+  (path
+    (identifier) @number))
 
 ; Color vlen '*' dimension as number
 (vlen_type
@@ -58,7 +63,8 @@
 [
  ":"
  ","
- ";" 
+ ";"
+ "/"
 ] @punctuation.delimiter
 
 [

@@ -12,6 +12,7 @@ netcdf basic {
   (dataset_id)
   (types_section))
 
+
 ================================================
 enum type int
 ================================================
@@ -33,6 +34,7 @@ netcdf basic {
         (enum_pair
           identity: (identifier)
           value: (const_int))))))
+
 
 ================================================
 enum type int no semicolon
@@ -56,6 +58,7 @@ netcdf basic {
           identity: (identifier)
           value: (const_int))))))
 
+
 ================================================
 enum type uint
 ================================================
@@ -77,6 +80,7 @@ netcdf basic {
         (enum_pair
           identity: (identifier)
           value: (const_int))))))
+
 
 ================================================
 enum negative values
@@ -100,6 +104,7 @@ netcdf basic {
           identity: (identifier)
           value: (const_int))))))
 
+
 ================================================
 enum zero values
 ================================================
@@ -121,6 +126,7 @@ netcdf basic {
         (enum_pair
           identity: (identifier)
           value: (const_int))))))
+
 
 ================================================
 enum multiple values
@@ -150,6 +156,7 @@ netcdf basic {
           identity: (identifier)
           value: (const_int))))))
 
+
 ================================================
 enum invalid non-integer values
 :error
@@ -161,6 +168,8 @@ netcdf basic {
 }
 
 ---
+
+
 
 ================================================
 opaque type
@@ -180,6 +189,7 @@ netcdf basic {
       size: (const_int)
       name: (identifier))))
 
+
 ================================================
 opaque type no semicolon
 ================================================
@@ -197,6 +207,7 @@ netcdf basic {
     (opaque_type
       size: (const_int)
       name: (identifier))))
+
 
 ================================================
 opaque type extra spacing
@@ -216,6 +227,7 @@ netcdf basic {
       size: (const_int)
       name: (identifier))))
 
+
 ================================================
 opaque type negative --- Not sure this is really allowed!!!
 ================================================
@@ -233,6 +245,7 @@ netcdf basic {
     (opaque_type
       size: (const_int)
       name: (identifier))))
+
 
 ================================================
 opaque type u suffix --- This is rejected by ncgen!!!
@@ -252,6 +265,7 @@ netcdf basic {
       size: (const_int)
       name: (identifier))))
 
+
 ================================================
 opaque type size 0 -- This is rejected by NetCDF!!!
 ================================================
@@ -270,6 +284,7 @@ netcdf basic {
       size: (const_int)
       name: (identifier))))
 
+
 ================================================
 opaque type Invalid float size
 :error
@@ -281,6 +296,8 @@ netcdf basic {
 }
 
 ---
+
+
 
 ================================================
 opaque type Invalid missing brackets
@@ -294,6 +311,8 @@ netcdf basic {
 
 ---
 
+
+
 ================================================
 opaque type Invalid unclosed bracket
 :error
@@ -305,6 +324,8 @@ netcdf basic {
 }
 
 ---
+
+
 
 ================================================
 vlen custom type
@@ -323,7 +344,8 @@ netcdf basic {
     (vlen_type
       type: (typeref
         (derived_type
-          (identifier)))
+          (path
+            (identifier))))
       name: (identifier))))
 
 ================================================
@@ -345,6 +367,7 @@ netcdf basic {
         (type))
       name: (identifier))))
 
+
 ================================================
 vlen type no semicolon
 ================================================
@@ -362,7 +385,8 @@ netcdf basic {
     (vlen_type
       type: (typeref
         (derived_type
-          (identifier)))
+          (path
+          (identifier))))
       name: (identifier))))
 
 ================================================
@@ -382,8 +406,10 @@ netcdf basic {
     (vlen_type
       type: (typeref
         (derived_type
-          (identifier)))
+          (path
+            (identifier))))
       name: (identifier))))
+
 
 ================================================
 vlen type Invalid missing brackets
@@ -397,6 +423,8 @@ netcdf basic {
 
 ---
 
+
+
 ================================================
 vlen type Invalid unclosed bracket
 :error
@@ -409,6 +437,8 @@ netcdf basic {
 
 ---
 
+
+
 ================================================
 vlen type Invalid * replacement
 :error
@@ -420,6 +450,8 @@ netcdf basic {
 }
 
 ---
+
+
 
 ================================================
 compound type
@@ -443,6 +475,7 @@ netcdf basic {
         (fieldspec
           name: (identifier))))))
 
+
 ================================================
 compound type missing semicolon
 ================================================
@@ -465,6 +498,7 @@ netcdf basic {
         (fieldspec
           name: (identifier))))))
 
+
 ================================================
 compound type spacing
 ================================================
@@ -486,6 +520,7 @@ netcdf basic {
           (type))
         (fieldspec
           name: (identifier))))))
+
 
 ================================================
 compound type with dimensions
@@ -510,6 +545,7 @@ netcdf basic {
           name: (identifier)
           dimensions: (field_dimensions_spec
             (const_int)))))))
+
 
 ================================================
 compound type with UINT dimensions
@@ -536,6 +572,7 @@ netcdf basic {
             (const_int)
             (const_int)))))))
 
+
 ================================================
 compound type invalid empty dimensions
 :error
@@ -547,6 +584,8 @@ netcdf basic {
 }
 
 ---
+
+
 
 ================================================
 compound type multiple values
@@ -580,6 +619,7 @@ netcdf basic {
         (fieldspec
           name: (identifier))))))
 
+
 ================================================
 compound type multiple values primitive and custom
 ================================================
@@ -609,9 +649,11 @@ netcdf basic {
       (compound_field
         type: (typeref
           (derived_type
-            (identifier)))
+            (path
+              (identifier))))
         (fieldspec
           name: (identifier))))))
+
 
 ================================================
 compound type formatted
@@ -646,9 +688,11 @@ netcdf basic {
       (compound_field
         type: (typeref
           (derived_type
-            (identifier)))
+            (path
+              (identifier))))
         (fieldspec
           name: (identifier))))))
+
 
 ================================================
 compound type Invalid missing internal semicolon
@@ -662,6 +706,8 @@ netcdf basic {
 
 ---
 
+
+
 ================================================
 compound type Invalid empty
 :error
@@ -673,3 +719,5 @@ netcdf basic {
 }
 
 ---
+
+

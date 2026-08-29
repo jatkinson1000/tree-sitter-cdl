@@ -1,0 +1,463 @@
+============================================
+Path with one group (variable_dimension)
+============================================
+
+netcdf basic {
+
+    group: f {
+        dimensions:
+            f_dim = 2 ;
+    }
+
+    group: g {
+        variables:
+            float g_var(/g/f_dim) ;
+    }
+
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (group
+    groupname: (identifier)
+    (dimensions_section
+      (dimension_declarations
+        (dimension
+          name: (identifier)
+          size: (dimension_size
+            (const_positive_int))))))
+  (group
+    groupname: (identifier)
+    (variables_section
+      (variable_declarations
+        type: (typeref
+          (type))
+        (variable
+          name: (identifier)
+          dimensions: (dimension_spec
+            (path
+              groupname: (groupname)
+              (identifier))))))))
+
+============================================
+Path with two groups (variable_dimension)
+============================================
+
+netcdf basic {
+
+    group: f {
+        group: ff {
+            dimensions:
+                ff_dim = 2 ;
+
+        }
+    }
+
+    group: g {
+        variables:
+            float g_var(/f/ff/ff_dim) ;
+    }
+
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (group
+    groupname: (identifier)
+    (group
+      groupname: (identifier)
+      (dimensions_section
+        (dimension_declarations
+          (dimension
+            name: (identifier)
+            size: (dimension_size
+              (const_positive_int)))))))
+  (group
+    groupname: (identifier)
+    (variables_section
+      (variable_declarations
+        type: (typeref
+          (type))
+        (variable
+          name: (identifier)
+          dimensions: (dimension_spec
+            (path
+              groupname: (groupname)
+              groupname: (groupname)
+              (identifier))))))))
+
+============================================
+Path with no groups but leading '/' (variable_dimension)
+============================================
+
+netcdf basic {
+
+    dimensions:
+        main_dim = 2 ;
+
+    group: g {
+        variables:
+            float g_var(/main_dim) ;
+    }
+
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (dimensions_section
+    (dimension_declarations
+      (dimension
+        name: (identifier)
+        size: (dimension_size
+          (const_positive_int)))))
+  (group
+    groupname: (identifier)
+    (variables_section
+      (variable_declarations
+        type: (typeref
+          (type))
+        (variable
+          name: (identifier)
+          dimensions: (dimension_spec
+            (path
+              (identifier))))))))
+
+============================================
+Path with whitespace between groups
+:error
+============================================
+
+netcdf basic {
+
+    group: f {
+        group: ff {
+            dimensions:
+                ff_dim = 2 ;
+
+        }
+    }
+
+    group: g {
+        variables:
+            float g_var( / f / ff / ff_dim) ;
+    }
+
+}
+
+---
+
+
+
+============================================
+Path invalid with double '//' (variable_dimension)
+:error
+============================================
+
+netcdf basic {
+
+    dimensions:
+        main_dim = 2 ;
+
+    group: g {
+        variables:
+            float g_var( // main_dim) ;
+    }
+
+}
+
+---
+
+
+
+============================================
+Path type in variable declaration
+============================================
+
+netcdf basic {
+
+    group: g {
+        types:
+            compound cmpd_t { int f1 ; } ;
+    }
+
+    group: h {
+        variables:
+            /g/cmpd_t compoundvar ;
+    }
+
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (group
+    groupname: (identifier)
+    (types_section
+      (compound_type
+        name: (identifier)
+        (compound_field
+          type: (typeref
+            (type))
+          (fieldspec
+            name: (identifier))))))
+  (group
+    groupname: (identifier)
+    (variables_section
+      (variable_declarations
+        type: (typeref
+          (derived_type
+            (path
+              groupname: (groupname)
+              (identifier))))
+        (variable
+          name: (identifier))))))
+
+============================================
+Path type in attribute declaration
+============================================
+
+netcdf basic {
+
+    group: g {
+        types:
+            opaque(8) op_t ;
+    }
+
+    group: h {
+        variables:
+            /g/op_t v:attr = 1 ;
+    }
+
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (group
+    groupname: (identifier)
+    (types_section
+      (opaque_type
+        size: (const_int)
+        name: (identifier))))
+  (group
+    groupname: (identifier)
+    (variables_section
+      (attribute
+        type: (typeref
+          (derived_type
+            (path
+              groupname: (groupname)
+              (identifier))))
+        variable: (identifier)
+        name: (identifier)
+        (data_list
+          (value
+            (integer)))))))
+
+============================================
+Path base type in vlen declaration
+============================================
+
+netcdf basic {
+
+    group: g {
+        types:
+            opaque(8) elem_t ;
+    }
+
+    group: h {
+        types:
+            /g/elem_t(*) vl ;
+    }
+
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (group
+    groupname: (identifier)
+    (types_section
+      (opaque_type
+        size: (const_int)
+        name: (identifier))))
+  (group
+    groupname: (identifier)
+    (types_section
+      (vlen_type
+        type: (typeref
+          (derived_type
+            (path
+              groupname: (groupname)
+              (identifier))))
+        name: (identifier)))))
+
+============================================
+Path type in compound type field
+============================================
+
+netcdf basic {
+
+    group: g {
+        types:
+            opaque(8) op_t ;
+    }
+
+    group: h {
+        types:
+            compound c { /g/op_t f ; } ;
+    }
+
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (group
+    groupname: (identifier)
+    (types_section
+      (opaque_type
+        size: (const_int)
+        name: (identifier))))
+  (group
+    groupname: (identifier)
+    (types_section
+      (compound_type
+        name: (identifier)
+        (compound_field
+          type: (typeref
+            (derived_type
+              (path
+                groupname: (groupname)
+                (identifier))))
+          (fieldspec
+            name: (identifier)))))))
+
+============================================
+Path segment starting with escaped digit
+============================================
+
+netcdf basic {
+
+    group: g {
+        variables:
+            float g_var(/\9a) ;
+    }
+
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (group
+    groupname: (identifier)
+    (variables_section
+      (variable_declarations
+        type: (typeref
+          (type))
+        (variable
+          name: (identifier)
+          dimensions: (dimension_spec
+            (path
+              (identifier))))))))
+
+============================================
+Path segment containing escaped space
+============================================
+
+netcdf basic {
+
+    group: g {
+        variables:
+            float g_var(/my\ grp/d_dim) ;
+    }
+
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (group
+    groupname: (identifier)
+    (variables_section
+      (variable_declarations
+        type: (typeref
+          (type))
+        (variable
+          name: (identifier)
+          dimensions: (dimension_spec
+            (path
+              groupname: (groupname)
+              (identifier))))))))
+
+============================================
+Path segment with adjacent escaped characters
+============================================
+
+netcdf basic {
+
+    group: g {
+        variables:
+            float g_var(/a\ \ b/c_dim) ;
+    }
+
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (group
+    groupname: (identifier)
+    (variables_section
+      (variable_declarations
+        type: (typeref
+          (type))
+        (variable
+          name: (identifier)
+          dimensions: (dimension_spec
+            (path
+              groupname: (groupname)
+              (identifier))))))))
+
+============================================
+Path segment ending in escaped char before slash
+============================================
+
+netcdf basic {
+
+    group: g {
+        variables:
+            float g_var(/g\#/sub_dim) ;
+    }
+
+}
+
+---
+
+(dataset
+  (dataset_id)
+  (group
+    groupname: (identifier)
+    (variables_section
+      (variable_declarations
+        type: (typeref
+          (type))
+        (variable
+          name: (identifier)
+          dimensions: (dimension_spec
+            (path
+              groupname: (groupname)
+              (identifier))))))))
