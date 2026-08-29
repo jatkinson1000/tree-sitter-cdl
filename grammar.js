@@ -338,6 +338,7 @@ module.exports = grammar({
     // Bytes - integer from 0 to 255 with a mandatory b/B suffix
     byte: $ => token(
       seq(
+        optional(/-/),
         /0|[1-9]\d?|1\d{2}|2[0-4]\d|25[0-5]/,
         /[bB]/,
       ),
