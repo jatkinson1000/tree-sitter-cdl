@@ -34,6 +34,10 @@ updated version:
 
    The grammar is developed in the `grammar.js` file.
 
+   An external scanner for certain tokens that are not possible to parse with the basic
+   Tree-sitter DSL is written in the `src/scanner.c` file.
+   This is currently required for group path names.
+
    After modification an updated version of the grammar and parser can be generated using:
    ```
    tree-sitter generate

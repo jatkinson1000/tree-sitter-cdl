@@ -215,7 +215,7 @@
       "required": true,
       "types": [
         {
-          "type": "identifier",
+          "type": "path",
           "named": true
         }
       ]
@@ -290,7 +290,7 @@
       "required": true,
       "types": [
         {
-          "type": "identifier",
+          "type": "path",
           "named": true
         }
       ]
@@ -506,6 +506,32 @@
     }
   },
   {
+    "type": "path",
+    "named": true,
+    "fields": {
+      "groupname": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "groupname",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "type",
     "named": true,
     "fields": {}
@@ -709,6 +735,10 @@
     "named": false
   },
   {
+    "type": "/",
+    "named": false
+  },
+  {
     "type": ":",
     "named": false
   },
@@ -784,6 +814,10 @@
   {
     "type": "group:",
     "named": false
+  },
+  {
+    "type": "groupname",
+    "named": true
   },
   {
     "type": "identifier",

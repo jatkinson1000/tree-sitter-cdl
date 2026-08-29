@@ -192,7 +192,8 @@ netcdf basic {
     (attribute
       type: (typeref
         (derived_type
-          (identifier)))
+          (path
+            (identifier))))
       variable: (identifier)
       name: (identifier)
       (data_list
@@ -227,7 +228,8 @@ netcdf basic {
     (attribute
       type: (typeref
         (derived_type
-          (identifier)))
+          (path
+            (identifier))))
       variable: (identifier)
       name: (identifier)
       (data_list
@@ -265,7 +267,8 @@ netcdf basic {
     (attribute
       type: (typeref
         (derived_type
-          (identifier)))
+          (path
+            (identifier))))
       name: (identifier)
       (data_list
         (value
@@ -310,7 +313,8 @@ netcdf basic {
     (attribute
       type: (typeref
         (derived_type
-          (identifier)))
+          (path
+            (identifier))))
       name: (identifier)
       (data_list
         (value
@@ -375,7 +379,8 @@ netcdf basic {
     (attribute
       type: (typeref
         (derived_type
-          (identifier)))
+          (path
+            (identifier))))
       name: (identifier)
       (data_list
         (value
@@ -452,7 +457,8 @@ netcdf basic {
     (attribute
       type: (typeref
         (derived_type
-          (identifier)))
+          (path
+            (identifier))))
       name: (identifier)
       (data_list
         (value

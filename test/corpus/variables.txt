@@ -104,7 +104,8 @@ netcdf basic {
       (variable
         name: (identifier)
         dimensions: (dimension_spec
-          (identifier))))))
+          (path
+            (identifier)))))))
 
 ==================================================
 Dataset with single variable, multiple dimensions
@@ -126,8 +127,10 @@ netcdf basic {
       (variable
         name: (identifier)
         dimensions: (dimension_spec
-          (identifier)
-          (identifier))))))
+          (path
+            (identifier))
+          (path
+            (identifier)))))))
 
 ===================================
 Dataset with derived variable type
@@ -146,7 +149,8 @@ netcdf basic {
     (variable_declarations
       (typeref
         (derived_type
-          (identifier)))
+          (path
+            (identifier))))
       (variable
         (identifier)))))
 
@@ -242,14 +246,19 @@ netcdf basic {
       (variable
         name: (identifier)
         dimensions: (dimension_spec
-          (identifier)
-          (identifier)))
+          (path
+            (identifier))
+          (path
+            (identifier))))
       (variable
         name: (identifier)
         dimensions: (dimension_spec
-          (identifier)
-          (identifier)
-          (identifier))))))
+          (path
+            (identifier))
+          (path
+            (identifier))
+          (path
+            (identifier)))))))
 
 ===================================================
 Dataset with invalid variable list missing comma
@@ -288,17 +297,22 @@ netcdf basic {
       (variable
         name: (identifier)
         dimensions: (dimension_spec
-          (identifier)
-          (identifier))))
+          (path
+            (identifier))
+          (path
+            (identifier)))))
     (variable_declarations
       type: (typeref
         (type))
       (variable
         name: (identifier)
         dimensions: (dimension_spec
-          (identifier)
-          (identifier)
-          (identifier))))))
+          (path
+            (identifier))
+          (path
+            (identifier))
+          (path
+            (identifier)))))))
 
 =============================================
 Dataset with variable with missing dimension

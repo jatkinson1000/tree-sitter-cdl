@@ -50,6 +50,8 @@ module.exports = grammar({
     $.comment,
   ],
 
+  externals: $ => ['/', $.path_identifier],
+
   rules: {
     dataset: $ => seq(
       'netcdf',
@@ -191,7 +193,7 @@ module.exports = grammar({
 
     dimension_spec: $ => seq(
       '(',
-      commaSep($.identifier),
+      commaSep($.path),
       ')',
     ),
 
@@ -283,6 +285,15 @@ module.exports = grammar({
       ),
     ),
 
+    path: $ => prec(PREC.derived_type, choice(
+      $.identifier,
+      seq(
+        repeat(seq('/', field('groupname', alias($.path_identifier, $.groupname)))),
+        '/',
+        alias($.path_identifier, $.identifier),
+      ),
+    )),
+
     // Comments exist anywhere on one line preceded by //
     comment: $ => token(seq('//', /.*/)),
 
@@ -291,7 +302,7 @@ module.exports = grammar({
       'char', 'byte', 'short', 'int', 'long', 'float', 'real', 'double', 'ubyte', 'ushort', 'uint', 'int64', 'uint64', 'string',
     ),
 
-    derived_type: $ => prec(PREC.derived_type, $.identifier),
+    derived_type: $ => $.path,
 
     // typeref handles the fact that types can declare as a primitive type, or be a user-defined type
     typeref: $ => choice(
