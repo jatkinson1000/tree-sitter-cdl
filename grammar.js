@@ -327,8 +327,8 @@ module.exports = grammar({
     float: $ => token(
       seq(
         choice(
-          /-?\d+\.\d*([eE][+-]?\d+)?[fFdDlL]?/, // Digits before and optional digits after the decimal point with optional scientific notation
-          /-?\.\d+([eE][+-]?\d+)?[fFdDlL]?/, // Decimal point followed by digits
+          /-?\d+\.\d*([eE][+-]?\d+)?/, // Digits before and optional digits after the decimal point with optional scientific notation
+          /-?\.\d+([eE][+-]?\d+)?/, // Decimal point followed by digits
           /-?\d+[eE][+-]?\d+/, // Scientific notation without a decimal point
         ),
         optional(float_suffix),

@@ -1214,6 +1214,57 @@ netcdf basic {
           (float))))))
 
 ================================================
+float attribute Invalid repeated f suffix
+:error
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 3.14159ff ;
+}
+
+---
+
+
+
+================================================
+float attribute Invalid repeated d suffix
+:error
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 3.14159dd ;
+}
+
+---
+
+
+
+================================================
+float attribute Invalid repeated l suffix
+:error
+================================================
+
+netcdf basic {
+    variables:
+        float a ;
+
+        // attributes
+        int a:attr_f = 3.14159ll ;
+}
+
+---
+
+
+
+================================================
 float attribute Invalid space after point
 :error
 ================================================
